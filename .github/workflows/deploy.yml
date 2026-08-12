@@ -1,0 +1,62 @@
+name: Deploy Word Garden
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: word-garden-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+      - name: Install Graphviz
+        run: sudo apt-get update && sudo apt-get install -y graphviz
+      - name: Build and verify
+        run: |
+          python scripts/build.py --today "$(TZ=Australia/Sydney date +%F)"
+          python scripts/verify.py dist
+      - name: Load deployment key
+        uses: webfactory/ssh-agent@a6f90b1f127823b31d4d4a8d96047790581349bd # v0.9.1
+        with:
+          ssh-private-key: ${{ secrets.DEPLOYMENT_SSH_KEY }}
+      - name: Trust merah host key
+        env:
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+      - name: Publish static files
+        env:
+          DEPLOY_HOST: merah.cassia.ifost.org.au
+          DEPLOY_USER: wordgarden
+          BUILD_DATE: ${{ vars.BUILD_DATE_OVERRIDE }}
+        run: |
+          if [ -z "$BUILD_DATE" ]; then unset BUILD_DATE; fi
+          scripts/deploy.sh
+      - name: Verify public endpoints
+        run: |
+          for url in \
+            https://pie.symmachus.org/ \
+            https://pie.symmachus.org/feed.xml \
+            https://esperanto.symmachus.org/ \
+            https://esperanto.symmachus.org/feed.xml \
+            https://toki.symmachus.org/ \
+            https://toki.symmachus.org/feed.xml
+          do
+            curl --fail --silent --show-error --retry 6 --retry-delay 5 "$url" >/dev/null
+          done

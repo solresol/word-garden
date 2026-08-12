@@ -1,0 +1,220 @@
+{
+  "title_plain": "Toki Pona Word a Day",
+  "language_label": "Toki Pona",
+  "lang_code": "tok",
+  "base_url": "https://toki.symmachus.org",
+  "description": "One compact Toki Pona word each day, a tiny sentence, and the much less tiny route by which its sound arrived.",
+  "theme_color": "#d34f35",
+  "cadence": "daily",
+  "weather": "Meaning broad, grammar light, context doing most of the lifting.",
+  "entries": [
+    {
+      "slug": "toki",
+      "headword": "toki",
+      "game": "toki",
+      "pronunciation": "TO-ki · /ˈtoki/ · content word",
+      "meanings": ["speech", "language", "to speak", "hello"],
+      "lede": "The language’s own name begins in Tok Pisin tok and ultimately English talk, then expands to cover speech, language, conversation, and greeting.",
+      "origin": {
+        "source_language": "Tok Pisin",
+        "source_word": "tok",
+        "note": "Toki is borrowed from Tok Pisin tok, ‘word’ or ‘speech’, itself from English talk.",
+        "comparisons": ["Tok Pisin tok", "English talk"]
+      },
+      "sentence": {"original": "toki!", "gloss": "speech / greeting", "translation": "Hello!", "note": "Toki Pona content words are flexible. Here toki works as a greeting; elsewhere it can name speech or act as ‘speak’."},
+      "weather": "A warm front of meanings; expect context throughout the day.",
+      "source_note": "The immediate donor and the donor’s own source are kept separate. Toki Pona’s current meaning range is not limited to the donor word’s range.",
+      "sources": [
+        {"title": "Wiktionary: Toki Pona toki", "url": "https://en.wiktionary.org/wiki/toki#Toki_Pona"},
+        {"title": "Official Toki Pona site", "url": "https://tokipona.org/"}
+      ]
+    },
+    {
+      "slug": "pona",
+      "headword": "pona",
+      "game": "pona",
+      "pronunciation": "PO-na · /ˈpona/ · content word",
+      "meanings": ["good", "simple", "to improve"],
+      "lede": "Esperanto bona changes one consonant and becomes Toki Pona’s famously broad word for goodness, usefulness, simplicity, and improvement.",
+      "origin": {
+        "source_language": "Esperanto",
+        "source_word": "bona",
+        "note": "Pona is borrowed from Esperanto bona, ‘good’. The shift b → p fits Toki Pona’s sound inventory.",
+        "comparisons": ["Esperanto bona"]
+      },
+      "sentence": {"original": "ni li pona.", "gloss": "this PRED good", "translation": "This is good.", "note": "After a third-person subject, li separates the subject from its predicate."},
+      "source_note": "The etymology identifies a source form; it does not restrict pona to the narrower job of a European adjective.",
+      "sources": [{"title": "Wiktionary: Toki Pona pona", "url": "https://en.wiktionary.org/wiki/pona#Toki_Pona"}]
+    },
+    {
+      "slug": "jan",
+      "headword": "jan",
+      "game": "jan",
+      "pronunciation": "yan · /jan/ · content word",
+      "meanings": ["person", "human", "somebody"],
+      "lede": "A Cantonese word for person passes almost intact into Toki Pona, where jan can be a person, people in general, or a personifying head noun.",
+      "origin": {
+        "source_language": "Cantonese",
+        "source_word": "人 jan4",
+        "note": "Jan is borrowed from Cantonese 人, romanised jan4 in Jyutping, meaning ‘person’. Toki Pona j is pronounced like English y.",
+        "comparisons": ["Cantonese 人 jan4"]
+      },
+      "sentence": {"original": "jan li kama.", "gloss": "person PRED arrive", "translation": "A person is arriving.", "note": "Kama covers coming or becoming; context decides how much English machinery the translation needs."},
+      "source_note": "Tone is not carried into Toki Pona, which has no lexical tone. The sound shape is adapted to a much smaller phonological system.",
+      "sources": [{"title": "Wiktionary: Toki Pona jan", "url": "https://en.wiktionary.org/wiki/jan#Toki_Pona"}]
+    },
+    {
+      "slug": "moku",
+      "headword": "moku",
+      "game": "moku",
+      "pronunciation": "MO-ku · /ˈmoku/ · content word",
+      "meanings": ["food", "to eat", "to drink", "to consume"],
+      "lede": "A Japanese munching sound becomes Toki Pona’s general-purpose word for food and consumption—including drinking.",
+      "origin": {
+        "source_language": "Japanese",
+        "source_word": "もぐもぐ mogu mogu",
+        "note": "Moku is associated with Japanese mogu mogu, an expressive form for chewing or munching, simplified into Toki Pona phonology.",
+        "comparisons": ["Japanese もぐもぐ mogu mogu"]
+      },
+      "sentence": {"original": "mi moku e kili.", "gloss": "I consume OBJ fruit", "translation": "I eat fruit.", "note": "After mi, no li is used. The particle e marks the direct object kili."},
+      "source_note": "Expressive source forms do not map like formal dictionary equations. The modern Toki Pona word has a stable, broader grammatical life of its own.",
+      "sources": [{"title": "Wiktionary: Toki Pona moku", "url": "https://en.wiktionary.org/wiki/moku#Toki_Pona"}]
+    },
+    {
+      "slug": "suli",
+      "headword": "suli",
+      "game": "suli",
+      "pronunciation": "SU-li · /ˈsuli/ · content word",
+      "meanings": ["big", "important", "long", "adult"],
+      "lede": "Finnish suuri, ‘big’, is trimmed to Toki Pona’s phonology and grows semantically to cover size, importance, maturity, and length.",
+      "origin": {
+        "source_language": "Finnish",
+        "source_word": "suuri",
+        "note": "Suli is borrowed from Finnish suuri, ‘big’ or ‘large’; Toki Pona lacks r, so the adapted form uses l.",
+        "comparisons": ["Finnish suuri"]
+      },
+      "sentence": {"original": "ma suli li pona.", "gloss": "land big PRED good", "translation": "The big land is good.", "note": "Modifiers follow their head: suli describes ma. The same phrase might be understood as a country, continent, or simply large area."},
+      "source_note": "The sound adaptation is documented; the generous modern semantic range comes from Toki Pona usage and context.",
+      "sources": [{"title": "Wiktionary: Toki Pona suli", "url": "https://en.wiktionary.org/wiki/suli#Toki_Pona"}]
+    },
+    {
+      "slug": "lili",
+      "headword": "lili",
+      "game": "lili",
+      "pronunciation": "LI-li · /ˈlili/ · content word",
+      "meanings": ["small", "few", "young", "a little"],
+      "lede": "Tok Pisin liklik loses its final consonants but keeps its reduplicated rhythm, becoming the compact opposite of suli.",
+      "origin": {
+        "source_language": "Tok Pisin",
+        "source_word": "liklik",
+        "note": "Lili comes from Tok Pisin liklik, ‘small’ or ‘a little’, adapted to Toki Pona’s open syllables.",
+        "comparisons": ["Tok Pisin liklik", "English little (deeper source)"]
+      },
+      "sentence": {"original": "kili lili li lon.", "gloss": "fruit small PRED exist", "translation": "A small fruit is here.", "note": "Lon can mean existing, present, at, or in. The English location word is supplied by context."},
+      "source_note": "The immediate model is Tok Pisin, even though that language’s word has an English history of its own.",
+      "sources": [{"title": "Wiktionary: Toki Pona lili", "url": "https://en.wiktionary.org/wiki/lili#Toki_Pona"}]
+    },
+    {
+      "slug": "telo",
+      "headword": "telo",
+      "game": "telo",
+      "pronunciation": "TE-lo · /ˈtelo/ · content word",
+      "meanings": ["water", "liquid", "fluid"],
+      "lede": "Acadian French de l’eau is heard as a compact two-syllable form and becomes Toki Pona’s broad word for liquids.",
+      "origin": {
+        "source_language": "Acadian French",
+        "source_word": "de l’eau",
+        "note": "Telo is traced to Acadian French de l’eau, ‘of/from the water’, reshaped to fit Toki Pona’s sound pattern.",
+        "comparisons": ["French de l’eau"]
+      },
+      "sentence": {"original": "mi moku e telo.", "gloss": "I consume OBJ liquid", "translation": "I drink water.", "note": "Moku covers consuming both food and drink. Telo can be water specifically or liquid more generally."},
+      "source_note": "The route is a reminder that borrowing follows heard phrases, accents, and communities—not just dictionary headwords.",
+      "sources": [{"title": "Wiktionary: Toki Pona telo", "url": "https://en.wiktionary.org/wiki/telo#Toki_Pona"}]
+    },
+    {
+      "slug": "suno",
+      "headword": "suno",
+      "game": "suno",
+      "pronunciation": "SU-no · /ˈsuno/ · content word",
+      "meanings": ["sun", "light", "brightness", "to shine"],
+      "lede": "Esperanto suno makes the trip into Toki Pona unchanged in spelling, then widens from the sun itself to light and shining.",
+      "origin": {
+        "source_language": "Esperanto",
+        "source_word": "suno",
+        "note": "Toki Pona borrowed suno directly from Esperanto suno, ‘sun’. Both languages pronounce it with first-syllable stress.",
+        "comparisons": ["Esperanto suno", "English sun (Esperanto’s model)"]
+      },
+      "sentence": {"original": "suno li seli.", "gloss": "sun PRED hot", "translation": "The sun is hot.", "note": "Seli covers heat, fire, cooking, and warmth. A small lexicon lets related ideas share a word."},
+      "source_note": "This is a borrowing chain visible across the three gardens: English influenced Esperanto suno, which directly supplied Toki Pona suno.",
+      "sources": [{"title": "Wiktionary: Toki Pona suno", "url": "https://en.wiktionary.org/wiki/suno#Toki_Pona"}]
+    },
+    {
+      "slug": "kasi",
+      "headword": "kasi",
+      "game": "kasi",
+      "pronunciation": "KA-si · /ˈkasi/ · content word",
+      "meanings": ["plant", "vegetation", "herb", "leaf"],
+      "lede": "Finnish kasvi sheds one consonant and becomes a broad Toki Pona category for growing green things and their plant-like products.",
+      "origin": {
+        "source_language": "Finnish",
+        "source_word": "kasvi",
+        "note": "Kasi is borrowed from Finnish kasvi, ‘plant’, with the consonant cluster simplified.",
+        "comparisons": ["Finnish kasvi"]
+      },
+      "sentence": {"original": "kasi li laso.", "gloss": "plant PRED blue.green", "translation": "The plant is green.", "note": "Laso covers a colour region that includes both green and blue; the plant makes the intended reading unsurprising."},
+      "source_note": "Borrowed sounds are simplified, while the meaning is organised by Toki Pona’s own deliberately broad categories.",
+      "sources": [{"title": "Wiktionary: Toki Pona kasi", "url": "https://en.wiktionary.org/wiki/kasi#Toki_Pona"}]
+    },
+    {
+      "slug": "akesi",
+      "headword": "akesi",
+      "game": "akesi",
+      "pronunciation": "A-ke-si · /ˈakesi/ · content word",
+      "meanings": ["reptile", "amphibian", "non-cute animal"],
+      "lede": "Dutch hagedis, ‘lizard’, is radically smoothed into akesi and grows into a category whose emotional boundary is famously context-sensitive.",
+      "origin": {
+        "source_language": "Dutch",
+        "source_word": "hagedis",
+        "note": "Akesi is borrowed from Dutch hagedis, ‘lizard’, with consonants and syllables adapted to Toki Pona’s inventory.",
+        "comparisons": ["Dutch hagedis"]
+      },
+      "sentence": {"original": "akesi li lon poka telo.", "gloss": "reptile PRED at side.of water", "translation": "A reptile is beside the water.", "note": "Poka literally concerns side or proximity; lon poka telo supplies the location phrase."},
+      "source_note": "Older glosses sometimes overemphasise ‘non-cute’. Actual categorisation varies, so the page lists the zoological centre before the cultural joke.",
+      "sources": [{"title": "Wiktionary appendix: Toki Pona akesi", "url": "https://en.wiktionary.org/wiki/Appendix:Toki_Pona/akesi"}]
+    },
+    {
+      "slug": "soweli",
+      "headword": "soweli",
+      "game": "soweli",
+      "pronunciation": "so-WE-li · /soˈweli/ · content word",
+      "meanings": ["animal", "land mammal", "beast"],
+      "lede": "A Georgian animal word is re-cut into Toki Pona syllables and becomes the usual category for furry land animals.",
+      "origin": {
+        "source_language": "Georgian",
+        "source_word": "ცხოველი cxoveli",
+        "note": "Soweli is traced to Georgian ცხოველი (cxoveli), ‘animal’, substantially adapted to Toki Pona phonology.",
+        "comparisons": ["Georgian ცხოველი cxoveli"]
+      },
+      "sentence": {"original": "soweli li lape.", "gloss": "animal PRED sleep", "translation": "The animal sleeps.", "note": "Lape can be sleep or rest. No tense marking forces the translation to be present; context normally handles time."},
+      "source_note": "The visual difference between source and result is a useful lesson: borrowing can preserve a recognisable rhythm without preserving every segment.",
+      "sources": [{"title": "Wiktionary appendix: Toki Pona soweli", "url": "https://en.wiktionary.org/wiki/Appendix:Toki_Pona/soweli"}]
+    },
+    {
+      "slug": "waso",
+      "headword": "waso",
+      "game": "waso",
+      "pronunciation": "WA-so · /ˈwaso/ · content word",
+      "meanings": ["bird", "flying creature", "winged animal"],
+      "lede": "French oiseau is heard and simplified into waso, a category happy to extend beyond strict ornithology when context wants wings.",
+      "origin": {
+        "source_language": "French",
+        "source_word": "oiseau",
+        "note": "Waso is borrowed from French oiseau, ‘bird’, with the initial glide and vowels adapted into two open syllables.",
+        "comparisons": ["French oiseau"]
+      },
+      "sentence": {"original": "waso li tawa lon sewi.", "gloss": "bird PRED move at high", "translation": "The bird moves in the sky.", "note": "Sewi covers high, above, sky, and sacredness. Here the location selects the sky reading."},
+      "source_note": "The etymology records the sound source. The present category is defined by Toki Pona speakers and the needs of each phrase.",
+      "sources": [{"title": "Wiktionary: Toki Pona waso", "url": "https://en.wiktionary.org/wiki/waso#Toki_Pona"}]
+    }
+  ]
+}

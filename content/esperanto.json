@@ -1,0 +1,219 @@
+{
+  "title_plain": "Esperanto Word a Day",
+  "language_label": "Esperanto",
+  "lang_code": "eo",
+  "base_url": "https://esperanto.symmachus.org",
+  "description": "A small daily Esperanto word, a simple sentence, and the documented source material that Zamenhof reshaped into a regular planned language.",
+  "theme_color": "#14764b",
+  "cadence": "daily",
+  "weather": "Regular grammar, scattered accusatives, excellent chance of affixes.",
+  "entries": [
+    {
+      "slug": "amiko",
+      "headword": "amiko",
+      "game": "amiko",
+      "pronunciation": "a-MI-ko · /aˈmiko/ · noun",
+      "meanings": ["friend"],
+      "lede": "A friend arrives wearing the dependable Esperanto noun ending -o and carrying a recognisably European root.",
+      "origin": {
+        "source_language": "Latin / Romance",
+        "source_word": "amīcus",
+        "note": "Esperanto amik- belongs to the international Romance family represented by Latin amīcus and French ami; -o marks the noun.",
+        "comparisons": ["French ami", "Italian amico", "Spanish amigo"]
+      },
+      "sentence": {"original": "La amiko venas.", "gloss": "the friend come.PRS", "translation": "The friend is coming.", "note": "Esperanto stress normally falls on the penultimate syllable. The present-tense ending -as does not change for person or number."},
+      "source_note": "Esperanto roots were often selected for international recognisability rather than copied mechanically from one language. The origin card names the clearest source family.",
+      "sources": [
+        {"title": "Wiktionary: Esperanto amiko", "url": "https://en.wiktionary.org/wiki/amiko#Esperanto"},
+        {"title": "Akademio de Esperanto dictionary search", "url": "https://www.akademio-de-esperanto.org/akademia_vortaro/"}
+      ]
+    },
+    {
+      "slug": "akvo",
+      "headword": "akvo",
+      "game": "akvo",
+      "pronunciation": "AK-vo · /ˈakvo/ · noun",
+      "meanings": ["water"],
+      "lede": "Aqua takes Esperanto’s regular noun ending and emerges as akvo, ready for drinking, rain, or an accusative -n.",
+      "origin": {
+        "source_language": "Latin / Italian",
+        "source_word": "aqua / acqua",
+        "note": "The root is modelled on Latin aqua and Romance descendants such as Italian acqua, adapted to Esperanto spelling and phonotactics.",
+        "comparisons": ["Latin aqua", "Italian acqua", "English aquatic"]
+      },
+      "sentence": {"original": "Mi trinkas akvon.", "gloss": "I drink.PRS water.ACC", "translation": "I drink water.", "note": "The final -n marks the direct object. The noun itself remains the familiar akvo underneath."},
+      "source_note": "The route is an international learned/Romance comparison, not a claim that speakers borrowed the word in a single historical conversation.",
+      "sources": [{"title": "Wiktionary: Esperanto akvo", "url": "https://en.wiktionary.org/wiki/akvo#Esperanto"}]
+    },
+    {
+      "slug": "hundo",
+      "headword": "hundo",
+      "game": "hundo",
+      "pronunciation": "HUN-do · /ˈhundo/ · noun",
+      "meanings": ["dog"],
+      "lede": "The Germanic hound family becomes the everyday Esperanto word for any dog, not merely a hunting one.",
+      "origin": {
+        "source_language": "German",
+        "source_word": "Hund",
+        "note": "Esperanto hundo closely follows German Hund, with the regular Esperanto noun ending -o.",
+        "comparisons": ["German Hund", "English hound", "Dutch hond"]
+      },
+      "sentence": {"original": "La hundo dormas.", "gloss": "the dog sleep.PRS", "translation": "The dog sleeps.", "note": "No indefinite article is needed; la is the definite article, and dormas is present tense."},
+      "source_note": "The German model is especially transparent, while cognates elsewhere in Germanic help explain why the root felt international.",
+      "sources": [{"title": "Wiktionary: Esperanto hundo", "url": "https://en.wiktionary.org/wiki/hundo#Esperanto"}]
+    },
+    {
+      "slug": "birdo",
+      "headword": "birdo",
+      "game": "birdo",
+      "pronunciation": "BIR-do · /ˈbirdo/ · noun",
+      "meanings": ["bird"],
+      "lede": "English bird receives one extra vowel and the regular -o that tells every Esperantist it is a noun.",
+      "origin": {
+        "source_language": "English",
+        "source_word": "bird",
+        "note": "Birdo is transparently modelled on English bird and adapted to Esperanto’s pronounce-every-letter pattern.",
+        "comparisons": ["English bird"]
+      },
+      "sentence": {"original": "Birdo flugas.", "gloss": "bird fly.PRS", "translation": "A bird flies.", "note": "Esperanto has no indefinite article. Context supplies the natural English ‘a’."},
+      "source_note": "This is one of Esperanto’s unusually obvious English-looking roots; the morphological ending still makes it fully Esperanto.",
+      "sources": [{"title": "Wiktionary: Esperanto birdo", "url": "https://en.wiktionary.org/wiki/birdo#Esperanto"}]
+    },
+    {
+      "slug": "hejmo",
+      "headword": "hejmo",
+      "game": "hejmo",
+      "pronunciation": "HEJ-mo · /ˈhejmo/ · noun",
+      "meanings": ["home"],
+      "lede": "Home and Heim meet in hejmo, which names home as a place or idea rather than merely a building.",
+      "origin": {
+        "source_language": "Germanic",
+        "source_word": "Heim / home",
+        "note": "The root draws on the Germanic set represented by German Heim and English home; Esperanto writes j for the glide in hej.",
+        "comparisons": ["German Heim", "English home"]
+      },
+      "sentence": {"original": "Mia hejmo estas ĉi tie.", "gloss": "my home be.PRS here", "translation": "My home is here.", "note": "The possessive mia agrees as an adjective, and ĉi tie means ‘here’."},
+      "source_note": "Several familiar Germanic forms converge here. The card therefore names a source family rather than insisting on a single donor.",
+      "sources": [{"title": "Wiktionary: Esperanto hejmo", "url": "https://en.wiktionary.org/wiki/hejmo#Esperanto"}]
+    },
+    {
+      "slug": "libro",
+      "headword": "libro",
+      "game": "libro",
+      "pronunciation": "LI-bro · /ˈlibro/ · noun",
+      "meanings": ["book"],
+      "lede": "A broadly Romance book word enters Esperanto almost unchanged and immediately becomes productive: librejo is a bookshop, libraro a collection.",
+      "origin": {
+        "source_language": "Latin / Romance",
+        "source_word": "liber / libro",
+        "note": "The form matches the Romance family descended from Latin liber, especially Italian and Spanish libro.",
+        "comparisons": ["Latin liber", "Italian libro", "Spanish libro"]
+      },
+      "sentence": {"original": "Mi legas libron.", "gloss": "I read.PRS book.ACC", "translation": "I am reading a book.", "note": "Esperanto present tense can cover English simple or progressive readings; libron carries the object ending -n."},
+      "source_note": "The same root can be recognisable in several source languages. Esperanto’s regular affixes then do work that those languages distribute less predictably.",
+      "sources": [{"title": "Wiktionary: Esperanto libro", "url": "https://en.wiktionary.org/wiki/libro#Esperanto"}]
+    },
+    {
+      "slug": "manghi",
+      "headword": "manĝi",
+      "game": "mangi",
+      "pronunciation": "MAN-ĝi · /ˈmand͡ʒi/ · verb",
+      "meanings": ["to eat"],
+      "lede": "French manger is regularised into manĝi, with the Esperanto infinitive ending -i and one letter, ĝ, doing the work of ‘j’ in judge.",
+      "origin": {
+        "source_language": "French",
+        "source_word": "manger",
+        "note": "The root follows French manger; Esperanto ĝ represents /d͡ʒ/, while -i marks the infinitive.",
+        "comparisons": ["French manger", "Italian mangiare"]
+      },
+      "sentence": {"original": "Ni manĝas panon.", "gloss": "we eat.PRS bread.ACC", "translation": "We eat bread.", "note": "Change infinitive -i to -as for present tense; panon is the direct object."},
+      "source_note": "The spelling is an adaptation, not a preserved French pronunciation. Esperanto maps the source-shaped root into its own regular sound system.",
+      "sources": [{"title": "Wiktionary: Esperanto manĝi", "url": "https://en.wiktionary.org/wiki/man%C4%9Di#Esperanto"}]
+    },
+    {
+      "slug": "paroli",
+      "headword": "paroli",
+      "game": "paroli",
+      "pronunciation": "pa-RO-li · /paˈroli/ · verb",
+      "meanings": ["to speak"],
+      "lede": "A Romance speaking root becomes paroli; from the same stem, parolo is a spoken word or speech and parole is adverbial.",
+      "origin": {
+        "source_language": "Italian / French",
+        "source_word": "parlare / parler",
+        "note": "Parol- reflects Romance verbs such as Italian parlare and French parler, remodelled with Esperanto verb endings.",
+        "comparisons": ["Italian parlare", "French parler", "English parley"]
+      },
+      "sentence": {"original": "Ŝi parolas Esperanton.", "gloss": "she speak.PRS Esperanto.ACC", "translation": "She speaks Esperanto.", "note": "Language names can take the accusative when they are the object of paroli in this construction."},
+      "source_note": "The precise weighting of French and Italian models is less important than the visible Romance comparison; the Esperanto derivational system is its own.",
+      "sources": [{"title": "Wiktionary: Esperanto paroli", "url": "https://en.wiktionary.org/wiki/paroli#Esperanto"}]
+    },
+    {
+      "slug": "suno",
+      "headword": "suno",
+      "game": "suno",
+      "pronunciation": "SU-no · /ˈsuno/ · noun",
+      "meanings": ["sun"],
+      "lede": "English sun supplies a compact root; Esperanto makes suno, then builds sunny suna and sunlight sunlumo without irregularity.",
+      "origin": {
+        "source_language": "English",
+        "source_word": "sun",
+        "note": "Suno is closely modelled on English sun, with -o marking the noun.",
+        "comparisons": ["English sun"]
+      },
+      "sentence": {"original": "La suno brilas.", "gloss": "the sun shine.PRS", "translation": "The sun shines.", "note": "Brilas is the present tense of brili, ‘to shine’."},
+      "source_note": "The root later made another journey: Toki Pona borrowed its own suno from Esperanto.",
+      "sources": [{"title": "Wiktionary: Esperanto suno", "url": "https://en.wiktionary.org/wiki/suno#Esperanto"}]
+    },
+    {
+      "slug": "luno",
+      "headword": "luno",
+      "game": "luno",
+      "pronunciation": "LU-no · /ˈluno/ · noun",
+      "meanings": ["moon"],
+      "lede": "Latin lūna and its Romance descendants give Esperanto a moon word that pairs neatly with suno.",
+      "origin": {
+        "source_language": "Latin / Romance",
+        "source_word": "lūna",
+        "note": "The form is shared across the Romance family and closely matches Latin lūna.",
+        "comparisons": ["Latin lūna", "Italian luna", "Spanish luna", "French lune"]
+      },
+      "sentence": {"original": "La luno estas hela.", "gloss": "the moon be.PRS bright.ADJ", "translation": "The moon is bright.", "note": "Adjectives end in -a; hela describes luno without an agreement surprise."},
+      "source_note": "A widely shared Romance form offered exactly the international recognisability Esperanto’s vocabulary selection often sought.",
+      "sources": [{"title": "Wiktionary: Esperanto luno", "url": "https://en.wiktionary.org/wiki/luno#Esperanto"}]
+    },
+    {
+      "slug": "bona",
+      "headword": "bona",
+      "game": "bona",
+      "pronunciation": "BO-na · /ˈbona/ · adjective",
+      "meanings": ["good"],
+      "lede": "Bona is good in the broad, useful sense—and its root was recognisable enough to travel onward into Toki Pona as pona.",
+      "origin": {
+        "source_language": "Latin / Romance",
+        "source_word": "bonus / buona",
+        "note": "The root aligns with Latin bonus and Romance forms such as Italian buona; -a is the Esperanto adjective ending.",
+        "comparisons": ["Latin bonus", "Italian buono / buona", "French bon / bonne"]
+      },
+      "sentence": {"original": "Tio estas bona.", "gloss": "that be.PRS good.ADJ", "translation": "That is good.", "note": "Bona is predicative here. The same root makes bone, ‘well’, by changing -a to -e."},
+      "source_note": "The origin is best understood as a Romance internationalism. Its later borrowing into Toki Pona is documented separately on that site.",
+      "sources": [{"title": "Wiktionary: Esperanto bona", "url": "https://en.wiktionary.org/wiki/bona#Esperanto"}]
+    },
+    {
+      "slug": "bela",
+      "headword": "bela",
+      "game": "bela",
+      "pronunciation": "BE-la · /ˈbela/ · adjective",
+      "meanings": ["beautiful"],
+      "lede": "Bela gathers a familiar Romance beauty root and gives it the perfectly regular Esperanto adjective ending -a.",
+      "origin": {
+        "source_language": "French / Italian",
+        "source_word": "belle / bella",
+        "note": "The form compares closely with French belle and Italian bella, both ultimately related to Latin bellus.",
+        "comparisons": ["French belle", "Italian bella", "Latin bellus"]
+      },
+      "sentence": {"original": "La ĝardeno estas bela.", "gloss": "the garden be.PRS beautiful.ADJ", "translation": "The garden is beautiful.", "note": "The circumflex in ĝ represents /d͡ʒ/; the rest is pronounced as written."},
+      "source_note": "Esperanto’s source selection is multilingual. This card shows a comparison set and avoids declaring one modern language the exclusive parent.",
+      "sources": [{"title": "Wiktionary: Esperanto bela", "url": "https://en.wiktionary.org/wiki/bela#Esperanto"}]
+    }
+  ]
+}
