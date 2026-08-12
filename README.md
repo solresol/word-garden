@@ -43,6 +43,8 @@ The repository needs two Actions secrets:
 
 The OpenBSD vhost snippets are in `infra/httpd.conf`. See [deployment.md](docs/deployment.md) for the host and DNS checklist.
 
+`scripts/ensure_cloudflare_dns.sh` audits or applies only the three intended proxied records using the local `~/.cloudflare` token.
+
 ## Editorial model
 
 The opening queue contains twelve entries for each garden. See [editorial.md](docs/editorial.md) before adding more. In particular:

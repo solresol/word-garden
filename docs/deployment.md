@@ -31,6 +31,15 @@ toki.symmachus.org
 
 Verify both Cloudflare’s API result and public resolution. A dashboard form or successful API request is not enough by itself.
 
+The repository helper defaults to check-only mode and reads the existing `AccountID:` / `API token:` format in `~/.cloudflare` without printing the credential:
+
+```sh
+scripts/ensure_cloudflare_dns.sh --check
+scripts/ensure_cloudflare_dns.sh --apply
+```
+
+It changes only the three explicit `A` records, keeps them proxied, refuses ambiguous duplicate records, and currently expects the live `merah` origin IPv4 `59.167.239.92`. Override that after a host move with `WORD_GARDEN_ORIGIN_IPV4`.
+
 ## GitHub secrets
 
 The dedicated key’s public half belongs in `/home/wordgarden/.ssh/authorized_keys`; its private half belongs only in the repository Actions secret `DEPLOYMENT_SSH_KEY`.
