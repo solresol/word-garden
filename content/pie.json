@@ -22,6 +22,7 @@
         {"branch": "Greek", "route": ["Ancient Greek phérō", "Greek phérein", "English pheromone"], "gloss": "a coined ‘carrier’ signal"},
         {"branch": "Indo-Aryan", "route": ["Sanskrit bhárati"], "gloss": "carries"}
       ],
+      "kerfuffle": {"left": "bear", "right": "pheromone", "note": "One endures a burden; the other carries a chemical signal. Both still have an old idea of carrying tucked into their histories."},
       "sentence": {
         "original": "*ph₂tḗr bʰéreti.",
         "gloss": "father.NOM carry.PRS.3SG",
@@ -48,6 +49,7 @@
         {"branch": "Indo-Aryan", "route": ["Sanskrit átti"], "gloss": "eats"},
         {"branch": "Baltic", "route": ["Lithuanian ė́sti"], "gloss": "to eat"}
       ],
+      "kerfuffle": {"left": "eat", "right": "edible", "note": "One does the eating; the other merely passes the eligibility test. The disagreement is grammatical rather than gastronomic."},
       "sentence": {
         "original": "*só h₁édti.",
         "gloss": "he.NOM eat.PRS.3SG",
@@ -72,6 +74,7 @@
         {"branch": "Italic", "route": ["Latin status", "English status"], "gloss": "condition; standing"},
         {"branch": "Greek", "route": ["Ancient Greek histánai", "Greek statikós", "English static"], "gloss": "causing to stand"}
       ],
+      "kerfuffle": {"left": "stand", "right": "status", "note": "A bodily posture and an abstract condition both kept a notion of standing, then found very different jobs."},
       "sentence": {
         "original": "*só stéh₂ti.",
         "gloss": "he.NOM stand.PRS.3SG",
@@ -96,6 +99,7 @@
         {"branch": "Germanic", "route": ["Proto-Germanic *witaną", "Old English witan", "English wit"], "gloss": "know; mental sharpness"},
         {"branch": "Indo-Aryan", "route": ["Sanskrit véda", "English Veda"], "gloss": "knowledge"}
       ],
+      "kerfuffle": {"left": "video", "right": "wit", "note": "One asks you to see; the other claims to know. The old semantic bridge ran from seeing to knowing."},
       "sentence": {
         "original": "*só wódr̥ weydeti.",
         "gloss": "he.NOM water.ACC see.PRS.3SG",
@@ -121,6 +125,7 @@
         {"branch": "Greek", "route": ["Ancient Greek estí"], "gloss": "is"},
         {"branch": "Indo-Aryan", "route": ["Sanskrit ásti"], "gloss": "is"}
       ],
+      "kerfuffle": {"left": "is", "right": "asti", "note": "This week’s kerfuffle is a peace conference: the forms travelled widely while the basic meaning barely budged."},
       "sentence": {
         "original": "*h₁éḱwos h₁ésti.",
         "gloss": "horse.NOM be.PRS.3SG",
@@ -145,6 +150,7 @@
         {"branch": "Italic", "route": ["Latin generāre", "English generate"], "gloss": "bring forth"},
         {"branch": "Greek", "route": ["Ancient Greek génos", "Greek genealogía", "English genealogy"], "gloss": "account of descent"}
       ],
+      "kerfuffle": {"left": "kin", "right": "generate", "note": "One names the people produced; the other names producing. A noun and a verb are disputing who owns the family paperwork."},
       "sentence": {
         "original": "*gʷḗn ǵénh₁eti.",
         "gloss": "woman.NOM give.birth.PRS.3SG",
@@ -169,6 +175,7 @@
         {"branch": "Greek", "route": ["Ancient Greek astḗr", "Greek asteroeidḗs", "English asteroid"], "gloss": "star-like"},
         {"branch": "Indo-Aryan", "route": ["Sanskrit tārā"], "gloss": "star"}
       ],
+      "kerfuffle": {"left": "star", "right": "asteroid", "note": "One is a star; the other was named for looking star-like. Astronomy has since made the distinction rather firmer."},
       "sentence": {
         "original": "*h₂stḗr h₁ésti.",
         "gloss": "star.NOM be.PRS.3SG",
@@ -194,6 +201,7 @@
         {"branch": "Greek", "route": ["Ancient Greek húdōr", "Greek hydro-", "English hydraulic"], "gloss": "worked by water"},
         {"branch": "Slavic", "route": ["Proto-Slavic *voda", "Russian vodá"], "gloss": "water"}
       ],
+      "kerfuffle": {"left": "water", "right": "hydraulic", "note": "One fills the pipe; the other describes what the pipe and its pressure can do. Same wet ancestry, different engineering duties."},
       "sentence": {
         "original": "*wódr̥ h₁ésti.",
         "gloss": "water.NOM be.PRS.3SG",
@@ -218,6 +226,7 @@
         {"branch": "Greek", "route": ["Ancient Greek mḗtēr", "Greek mētrópolis", "English metropolis"], "gloss": "mother-city"},
         {"branch": "Indo-Aryan", "route": ["Sanskrit mātṛ"], "gloss": "mother"}
       ],
+      "kerfuffle": {"left": "mother", "right": "metropolis", "note": "A parent and a very large city meet because metropolis began as a ‘mother-city’, not because cities have opinions about bedtime."},
       "sentence": {
         "original": "*méh₂tēr bʰéreti.",
         "gloss": "mother.NOM carry.PRS.3SG",
@@ -242,6 +251,7 @@
         {"branch": "Greek", "route": ["Ancient Greek patḗr", "Greek patriárkhēs", "English patriarch"], "gloss": "ruling father"},
         {"branch": "Indo-Aryan", "route": ["Sanskrit pitṛ"], "gloss": "father"}
       ],
+      "kerfuffle": {"left": "father", "right": "patriarch", "note": "One is a relationship; the other accumulated authority. The extra hierarchy arrived along the Greek route."},
       "sentence": {
         "original": "*ph₂tḗr stéh₂ti.",
         "gloss": "father.NOM stand.PRS.3SG",
@@ -266,6 +276,7 @@
         {"branch": "Italic", "route": ["Latin innovāre", "English innovate"], "gloss": "make new"},
         {"branch": "Greek", "route": ["Ancient Greek néos", "English neo-"], "gloss": "new; revived"}
       ],
+      "kerfuffle": {"left": "new", "right": "novel", "note": "Novel began by announcing newness, then also became a whole kind of book. New would like its adjective back."},
       "sentence": {
         "original": "*h₁éḱwos néwos h₁ésti.",
         "gloss": "horse.NOM new.NOM be.PRS.3SG",
@@ -291,6 +302,7 @@
         {"branch": "Indo-Aryan", "route": ["Sanskrit rā́jan", "Hindi rāj", "English raj"], "gloss": "rule; kingdom"},
         {"branch": "Celtic", "route": ["Proto-Celtic *rīxs", "Gaulish -rix"], "gloss": "king, in names"}
       ],
+      "kerfuffle": {"left": "royal", "right": "raj", "note": "One became an adjective of kingship; the other names rule or a realm. Their shared history crossed very different empires."},
       "sentence": {
         "original": "*h₃rḗǵs h₁ésti.",
         "gloss": "ruler.NOM be.PRS.3SG",

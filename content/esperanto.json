@@ -1,11 +1,12 @@
 {
-  "title_plain": "Esperanto Word a Day",
+  "title_plain": "Esperanto Word a Week",
   "language_label": "Esperanto",
   "lang_code": "eo",
   "base_url": "https://esperanto.symmachus.org",
-  "description": "A small daily Esperanto word, a simple sentence, and the documented source material that Zamenhof reshaped into a regular planned language.",
+  "description": "A small weekly Esperanto word, a simple sentence, and the documented source material that Zamenhof reshaped into a regular planned language.",
   "theme_color": "#14764b",
-  "cadence": "daily",
+  "cadence": "weekly",
+  "publish_weekday": 0,
   "weather": "Regular grammar, scattered accusatives, excellent chance of affixes.",
   "entries": [
     {

@@ -5,15 +5,23 @@
   if (!config || !Array.isArray(config.answers) || config.answers.length === 0) return;
 
   const now = new Date();
-  const todayUTC = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  const calendarParts = Object.fromEntries(
+    new Intl.DateTimeFormat("en-CA", {
+      timeZone: config.time_zone || "UTC",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).formatToParts(now).filter((part) => part.type !== "literal").map((part) => [part.type, Number(part.value)]),
+  );
+  const todayUTC = Date.UTC(calendarParts.year, calendarParts.month - 1, calendarParts.day);
   const anchorParts = config.anchor.split("-").map(Number);
   const anchorUTC = Date.UTC(anchorParts[0], anchorParts[1] - 1, anchorParts[2]);
-  const puzzle = Math.max(0, Math.floor((todayUTC - anchorUTC) / 86400000));
+  const periodDays = config.cadence === "weekly" ? 7 : 1;
+  const puzzle = Math.max(0, Math.floor((todayUTC - anchorUTC) / (86400000 * periodDays)));
   const answerData = config.answers[puzzle % config.answers.length];
   const solution = answerData.answer.toLowerCase();
   const maxRows = 6;
-  const dateKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
-  const storageKey = `rootle:${config.site}:${dateKey}`;
+  const storageKey = `rootle:${config.site}:${config.cadence}:puzzle-${puzzle}`;
   const board = document.querySelector("#board");
   const keyboard = document.querySelector("#keyboard");
   const status = document.querySelector("#game-status");
@@ -90,7 +98,7 @@
     hint.hidden = !state.hint;
     hint.textContent = `Hint: ${answerData.hint}`;
     if (state.finished) {
-      status.textContent = state.won ? `Found it: ${answerData.display}.` : `Today’s word was ${answerData.display}.`;
+      status.textContent = state.won ? `Found it: ${answerData.display}.` : `${config.period_label} word was ${answerData.display}.`;
       shareButton.hidden = false;
       replayButton.hidden = false;
     }

@@ -1,12 +1,12 @@
 # Word Garden
 
-Three static word-of-the-day sites, one deliberately slower than advertised:
+Three static word-of-the-day sites, all deliberately slower than advertised:
 
 - `pie.symmachus.org` — Proto-Indo-European **word a ~~day~~ week**
-- `esperanto.symmachus.org` — Esperanto word a day
-- `toki.symmachus.org` — Toki Pona word a day
+- `esperanto.symmachus.org` — Esperanto **word a ~~day~~ week**
+- `toki.symmachus.org` — Toki Pona **word a ~~day~~ week**
 
-Each site has a source-linked entry, a tiny example sentence, an archive, RSS and JSON feeds, a `today.json` endpoint, and a daily Wordle-like game called Rootle. PIE entries add Graphviz family trees; constructed-language entries show the documented borrowing route.
+Each site has a source-linked entry, a tiny example sentence, an archive, RSS and JSON feeds, a `today.json` endpoint, and a weekly Wordle-like game called Rootle. PIE entries add Graphviz family trees and a Cognate Kerfuffle; constructed-language entries show the documented borrowing route.
 
 There is no runtime application or database. Content and publication state are JSON in Git. GitHub Actions builds the static trees and publishes them to `merah`.
 
@@ -32,7 +32,7 @@ git push
 
 ## Publication and deployment
 
-`Publish due words` runs at 16:17 UTC, which is early morning in Sydney. Esperanto and Toki Pona advance daily; PIE advances on Monday. The workflow commits only `content/state.json`, pushes it, and dispatches the deploy workflow because GitHub suppresses ordinary push-triggered workflows for commits made with `GITHUB_TOKEN`.
+`Publish due words` runs at 16:17 UTC on Sunday, which is early Monday morning in Sydney. All three gardens advance on Monday. The workflow commits only `content/state.json`, pushes it, and dispatches the deploy workflow because GitHub suppresses ordinary push-triggered workflows for commits made with `GITHUB_TOKEN`.
 
 Any ordinary push to `main` triggers `Deploy Word Garden`. The deployment builds all three sites, checks links and feeds, rsyncs them to their explicit vhost roots on `merah`, and smoke-tests public HTTPS.
 

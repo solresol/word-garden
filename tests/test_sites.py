@@ -35,6 +35,9 @@ class ContentTests(unittest.TestCase):
         site = build.load_json(ROOT / "content" / "pie.json")
         for entry in site["entries"]:
             self.assertTrue(entry["headword"].startswith("*"), entry["headword"])
+            self.assertTrue(entry["kerfuffle"]["left"], entry["slug"])
+            self.assertTrue(entry["kerfuffle"]["right"], entry["slug"])
+            self.assertTrue(entry["kerfuffle"]["note"], entry["slug"])
             note = entry["sentence"]["note"].lower()
             self.assertTrue("teaching" in note or "pedagogical" in note, entry["slug"])
 
@@ -48,10 +51,14 @@ class BuildTests(unittest.TestCase):
             pie = (out / "pie" / "index.html").read_text(encoding="utf-8")
             self.assertIn("<s>day</s>", pie)
             self.assertIn("<ins>week</ins>", pie)
+            self.assertIn("Cognate Kerfuffle", pie)
             self.assertIn("*bʰer-", pie)
             self.assertTrue((out / "pie" / "graphs" / "bher.svg").is_file())
             for key in build.SITE_KEYS:
                 ET.parse(out / key / "feed.xml")
+                rootle = (out / key / "rootle" / "index.html").read_text(encoding="utf-8")
+                self.assertIn('"cadence": "weekly"', rootle)
+                self.assertIn("Guess this week’s", rootle)
                 today = json.loads((out / key / "api" / "today.json").read_text(encoding="utf-8"))
                 self.assertEqual("2026-08-12", today["published"])
 
@@ -71,7 +78,7 @@ class BuildTests(unittest.TestCase):
 
 
 class PublisherTests(unittest.TestCase):
-    def test_daily_and_weekly_cadences(self) -> None:
+    def test_all_gardens_publish_weekly(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             temp_content = Path(tmp) / "content"
             shutil.copytree(ROOT / "content", temp_content)
@@ -79,7 +86,7 @@ class PublisherTests(unittest.TestCase):
             publish_due.CONTENT = temp_content
             try:
                 thursday = publish_due.publish(date(2026, 8, 13))
-                self.assertEqual(["esperanto", "toki"], [item[0] for item in thursday])
+                self.assertEqual([], thursday)
                 monday = publish_due.publish(date(2026, 8, 17))
                 self.assertEqual(["pie", "esperanto", "toki"], [item[0] for item in monday])
             finally:

@@ -43,7 +43,7 @@ python3 scripts/build.py
 python3 scripts/verify.py dist
 ```
 
-Keep at least fourteen unpublished daily words and four unpublished PIE weeks. The publisher is intentionally deterministic; editorial judgment replenishes the queue.
+Keep at least six unpublished weeks in each garden. The publisher is intentionally deterministic; editorial judgment replenishes the queue.
 
 ## Tone
 

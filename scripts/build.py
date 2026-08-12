@@ -191,6 +191,17 @@ def lineage_markup(entry: dict) -> str:
         )
         accessible.append(" → ".join([entry["headword"], *route]))
     alt = "; ".join(accessible)
+    kerfuffle = entry.get("kerfuffle", {})
+    kerfuffle_html = ""
+    if kerfuffle:
+        kerfuffle_html = f"""
+      <aside class="kerfuffle" aria-labelledby="kerfuffle-heading">
+        <p class="eyebrow">Semantic drift, politely disputed</p>
+        <h3 id="kerfuffle-heading">Cognate Kerfuffle</h3>
+        <p class="kerfuffle-pair"><strong>{esc(kerfuffle['left'])}</strong><span aria-hidden="true">↔</span><strong>{esc(kerfuffle['right'])}</strong></p>
+        <p>{esc(kerfuffle['note'])}</p>
+      </aside>
+        """
     return f"""
     <section class="section-block lineage" aria-labelledby="family-heading">
       <div class="section-heading"><p class="eyebrow">Then → now</p><h2 id="family-heading">The family reunion</h2></div>
@@ -199,6 +210,7 @@ def lineage_markup(entry: dict) -> str:
         <figcaption>Selected routes, not an exhaustive family tree. Intermediate forms are simplified for a readable first look.</figcaption>
       </figure>
       <ul class="descendant-cards">{''.join(cards)}</ul>
+      {kerfuffle_html}
     </section>
     """
 
@@ -253,7 +265,7 @@ def article_markup(site_key: str, site: dict, entry: dict, published: date) -> s
         <div class="section-heading"><p class="eyebrow">Receipts</p><h2 id="sources-heading">Sources and cautions</h2></div>
         <p>{esc(entry['source_note'])}</p><ul>{sources}</ul>
       </section>
-      <nav class="end-nav" aria-label="After the word"><a class="button" href="/rootle/">Play today’s Rootle</a><a href="/archive/">Browse the archive →</a></nav>
+      <nav class="end-nav" aria-label="After the word"><a class="button" href="/rootle/">Play this week’s Rootle</a><a href="/archive/">Browse the archive →</a></nav>
     </article>
     """
 
@@ -296,13 +308,16 @@ def rootle_markup(site_key: str, site: dict, entries: list[dict]) -> str:
             "site": site_key,
             "language": site["language_label"],
             "answers": answers,
-            "anchor": "2026-08-12",
+            "anchor": "2026-08-10",
+            "cadence": site["cadence"],
+            "period_label": "This week’s" if site["cadence"] == "weekly" else "Today’s",
+            "time_zone": "Australia/Sydney",
         },
         ensure_ascii=False,
     ).replace("</", "<\\/")
     return f"""
     <header class="simple-hero rootle-intro"><p class="eyebrow">A family resemblance game</p><h1>Rootle</h1>
-    <p>Guess today’s {esc(site['language_label'])} word in six tries. Accents, asterisks, and laryngeal subscripts stay outside the tiles; the hint does not.</p></header>
+    <p>Guess this week’s {esc(site['language_label'])} word in six tries. Accents, asterisks, and laryngeal subscripts stay outside the tiles; the hint does not.</p></header>
     <section class="game" aria-labelledby="game-heading">
       <div class="game-meta"><span id="puzzle-number"></span><button id="hint-button" type="button">Reveal a hint</button></div>
       <p id="hint" class="hint" hidden></p>
@@ -430,7 +445,7 @@ def build_site(site_key: str, site: dict, state: dict, out_root: Path, today: da
             site_key,
             site,
             f"Rootle — {site['title_plain']}",
-            f"A daily {site['language_label']} word-guessing game.",
+            f"A weekly {site['language_label']} word-guessing game.",
             f"{site['base_url']}/rootle/",
             rootle_markup(site_key, site, site["entries"]),
             script="/assets/rootle.js",

@@ -1,11 +1,12 @@
 {
-  "title_plain": "Toki Pona Word a Day",
+  "title_plain": "Toki Pona Word a Week",
   "language_label": "Toki Pona",
   "lang_code": "tok",
   "base_url": "https://toki.symmachus.org",
-  "description": "One compact Toki Pona word each day, a tiny sentence, and the much less tiny route by which its sound arrived.",
+  "description": "One compact Toki Pona word each week, a tiny sentence, and the much less tiny route by which its sound arrived.",
   "theme_color": "#d34f35",
-  "cadence": "daily",
+  "cadence": "weekly",
+  "publish_weekday": 0,
   "weather": "Meaning broad, grammar light, context doing most of the lifting.",
   "entries": [
     {
