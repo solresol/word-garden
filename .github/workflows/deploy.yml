@@ -30,9 +30,13 @@ jobs:
           python scripts/build.py --today "$(TZ=Australia/Sydney date +%F)"
           python scripts/verify.py dist
       - name: Load deployment key
-        uses: webfactory/ssh-agent@a6f90b1f127823b31d4d4a8d96047790581349bd # v0.9.1
-        with:
-          ssh-private-key: ${{ secrets.DEPLOYMENT_SSH_KEY }}
+        env:
+          DEPLOYMENT_SSH_KEY: ${{ secrets.DEPLOYMENT_SSH_KEY }}
+        run: |
+          eval "$(ssh-agent -s)"
+          printf 'SSH_AUTH_SOCK=%s\n' "$SSH_AUTH_SOCK" >> "$GITHUB_ENV"
+          printf 'SSH_AGENT_PID=%s\n' "$SSH_AGENT_PID" >> "$GITHUB_ENV"
+          printf '%s\n' "$DEPLOYMENT_SSH_KEY" | ssh-add -
       - name: Trust merah host key
         env:
           DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
