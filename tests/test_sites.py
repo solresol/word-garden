@@ -82,6 +82,14 @@ class PublisherTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             temp_content = Path(tmp) / "content"
             shutil.copytree(ROOT / "content", temp_content)
+            baseline = {
+                "pie": [{"slug": "bher", "published": "2026-08-12"}],
+                "esperanto": [{"slug": "amiko", "published": "2026-08-12"}],
+                "toki": [{"slug": "toki", "published": "2026-08-12"}],
+            }
+            (temp_content / "state.json").write_text(
+                json.dumps(baseline, indent=2) + "\n", encoding="utf-8"
+            )
             original = publish_due.CONTENT
             publish_due.CONTENT = temp_content
             try:
@@ -89,6 +97,7 @@ class PublisherTests(unittest.TestCase):
                 self.assertEqual([], thursday)
                 monday = publish_due.publish(date(2026, 8, 17))
                 self.assertEqual(["pie", "esperanto", "toki"], [item[0] for item in monday])
+                self.assertEqual([], publish_due.publish(date(2026, 8, 17)))
             finally:
                 publish_due.CONTENT = original
 
