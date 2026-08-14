@@ -12,6 +12,7 @@ from urllib.parse import urlsplit
 
 
 LINK_RE = re.compile(r'(?:href|src)="([^"]+)"')
+SITE_KEYS = ("pie", "esperanto", "toki", "solresol")
 
 
 def target_for(site_dir: Path, url: str) -> Path | None:
@@ -29,7 +30,7 @@ def target_for(site_dir: Path, url: str) -> Path | None:
 
 def verify(dist: Path) -> list[str]:
     errors: list[str] = []
-    for key in ("pie", "esperanto", "toki"):
+    for key in SITE_KEYS:
         site_dir = dist / key
         for required in ("index.html", "archive/index.html", "rootle/index.html", "about/index.html", "feed.xml", "feed.json", "api/today.json"):
             if not (site_dir / required).is_file():

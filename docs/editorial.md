@@ -28,6 +28,14 @@ Do not turn a search-result snippet, generated answer, or visual resemblance int
 - Keep sentences within beginner grammar and check particles, agreement, and object marking.
 - Treat semantic range as current usage, not as a prison imposed by the donor word.
 
+## Solresol entries
+
+- Use Sudre's dictionary or Gajewski's grammar for the assigned sequence and historical gloss; name later community reinterpretations as such.
+- Store every word as an ordered `notes` array using only `do`, `re`, `mi`, `fa`, `sol`, `la`, and `si`.
+- Do not describe assigned a priori vocabulary as borrowed or etymologically derived from a language that happens to have a similar syllable.
+- Mark newly assembled phrases as teaching examples. If an example is expanded from the grammar's abbreviated note spelling, say so.
+- Treat colour and digit forms as alternate encodings of the same note sequence, not separate descendants.
+
 ## Queue discipline
 
 New content is appended to each file’s `entries` array. Never reorder already-published slugs. `content/state.json` is the only publication clock.
@@ -38,6 +46,7 @@ Before committing an addition:
 python3 -m json.tool content/pie.json >/dev/null
 python3 -m json.tool content/esperanto.json >/dev/null
 python3 -m json.tool content/toki.json >/dev/null
+python3 -m json.tool content/solresol.json >/dev/null
 python3 -m unittest discover -s tests -v
 python3 scripts/build.py
 python3 scripts/verify.py dist

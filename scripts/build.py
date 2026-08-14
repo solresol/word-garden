@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the three static Word Garden sites without third-party Python packages."""
+"""Build the four static Word Garden sites without third-party Python packages."""
 
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT_DIR = ROOT / "content"
 ASSET_DIR = ROOT / "site" / "assets"
-SITE_KEYS = ("pie", "esperanto", "toki")
+SITE_KEYS = ("pie", "esperanto", "toki", "solresol")
 SYDNEY = ZoneInfo("Australia/Sydney")
 
 
@@ -53,6 +53,7 @@ def nav(site_key: str) -> str:
         ("pie", "PIE", "https://pie.symmachus.org/"),
         ("esperanto", "Esperanto", "https://esperanto.symmachus.org/"),
         ("toki", "Toki Pona", "https://toki.symmachus.org/"),
+        ("solresol", "Solresol", "https://solresol.symmachus.org/"),
     )
     rendered = []
     for key, label, url in links:
@@ -77,7 +78,8 @@ def page(
         if feed
         else ""
     )
-    script_tag = f'<script src="{esc(script)}" defer></script>' if script else ""
+    page_script = script or ("/assets/solresol.js" if site_key == "solresol" else None)
+    script_tag = f'<script src="{esc(page_script)}" defer></script>' if page_script else ""
     return f"""<!doctype html>
 <html lang="en" data-site="{esc(site_key)}">
 <head>
@@ -106,7 +108,7 @@ def page(
   </header>
   <main id="main">{body}</main>
   <footer>
-    <p>Three small words, one unruly family. Built as static files; no accounts, adverts, or tracking.</p>
+    <p>Four small words, several unruly families. Built as static files; no accounts, adverts, or tracking.</p>
     <p><a href="/feed.xml">RSS</a> · <a href="/feed.json">JSON Feed</a> · <a href="/api/today.json">today.json</a></p>
   </footer>
 </body>
@@ -232,13 +234,45 @@ def origin_markup(site: dict, entry: dict) -> str:
     """
 
 
+def solresol_markup(entry: dict) -> str:
+    note_data = {
+        "do": (1, "red"),
+        "re": (2, "orange"),
+        "mi": (3, "yellow"),
+        "fa": (4, "green"),
+        "sol": (5, "blue"),
+        "la": (6, "indigo"),
+        "si": (7, "violet"),
+    }
+    notes = entry["notes"]
+    chips = "".join(
+        f'<li class="note note-{esc(note)}"><span>{esc(note)}</span><small>{note_data[note][0]} · {note_data[note][1]}</small></li>'
+        for note in notes
+    )
+    spoken = " · ".join(notes)
+    return f"""
+    <section class="section-block solresol-spelling" aria-labelledby="spelling-heading">
+      <div class="section-heading"><p class="eyebrow">Seven-note spelling</p><h2 id="spelling-heading">Say it, play it, flash it</h2></div>
+      <ol class="note-sequence" aria-label="{esc(spoken)}">{chips}</ol>
+      <button class="play-word" type="button" data-notes="{esc(','.join(notes))}">▶ Play the word</button>
+      <p>{esc(entry['origin']['note'])}</p>
+      <p class="caveat">Sudre also mapped the notes to the digits 1–7 and the rainbow colours shown above. The pitches played here use a convenient C-major scale; Solresol is about the ordered notes, not absolute pitch.</p>
+    </section>
+    """
+
+
 def article_markup(site_key: str, site: dict, entry: dict, published: date) -> str:
     meanings = "".join(f"<li>{esc(item)}</li>" for item in entry["meanings"])
     sources = "".join(
         f'<li><a href="{esc(source["url"])}" rel="external">{esc(source["title"])}</a></li>'
         for source in entry["sources"]
     )
-    relation = lineage_markup(entry) if site_key == "pie" else origin_markup(site, entry)
+    if site_key == "pie":
+        relation = lineage_markup(entry)
+    elif site_key == "solresol":
+        relation = solresol_markup(entry)
+    else:
+        relation = origin_markup(site, entry)
     weather = entry.get("weather", site.get("weather", "Clear enough to bring a comparative dictionary."))
     return f"""
     <article>
@@ -283,11 +317,12 @@ def archive_markup(site: dict, entries: list[tuple[date, dict]]) -> str:
 
 
 def about_markup(site_key: str, site: dict) -> str:
-    special = (
-        "Proto-Indo-European is reconstructed, not recorded. An asterisk marks a scholarly reconstruction; forms and mini-sentences can vary by model. The diagrams show selected, defensible routes rather than claiming every lookalike is a cousin."
-        if site_key == "pie"
-        else "A planned language can still have a past. The origin cards identify documented models or source words, while the example sentence shows present-day use. Similarity alone is never treated as proof of borrowing."
-    )
+    if site_key == "pie":
+        special = "Proto-Indo-European is reconstructed, not recorded. An asterisk marks a scholarly reconstruction; forms and mini-sentences can vary by model. The diagrams show selected, defensible routes rather than claiming every lookalike is a cousin."
+    elif site_key == "solresol":
+        special = "Solresol is built a priori from sequences of seven notes, so there is no donor language to pretend it borrowed from. The spelling card instead shows each note as a syllable, digit, colour, and playable pitch. Glosses follow the historical grammar and the community English dictionary, with teaching snippets labelled as such."
+    else:
+        special = "A planned language can still have a past. The origin cards identify documented models or source words, while the example sentence shows present-day use. Similarity alone is never treated as proof of borrowing."
     return f"""
     <header class="simple-hero"><p class="eyebrow">Method before mythology</p><h1>About this garden</h1>
     <p>{esc(site['description'])}</p></header>
@@ -295,7 +330,7 @@ def about_markup(site_key: str, site: dict) -> str:
       <h2>Editorial promise</h2><p>{esc(special)}</p>
       <p>Each entry names its sources. Modern descendants are traced through intermediate languages where space permits. Short teaching sentences are explicitly labelled as teaching examples, not newly discovered inscriptions.</p>
       <h2>Why it looks like this</h2><p>Classic word-of-the-day sites put the word, pronunciation, short meaning, example, and archive first. This version keeps that useful rhythm, then gives etymology the largest visual surface.</p>
-      <h2>How publication works</h2><p>Words and publication state are plain JSON in Git. A scheduled job publishes the next queued entry, commits the state change, and the deployment workflow rebuilds all three static sites. There is no production database.</p>
+      <h2>How publication works</h2><p>Words and publication state are plain JSON in Git. A scheduled job publishes the next queued entry, commits the state change, and the deployment workflow rebuilds all four static sites. There is no production database.</p>
       <h2>Licensing</h2><p>Original editorial content is CC BY-SA 4.0; code is MIT licensed. Linked sources retain their own licences and authority.</p>
     </div>
     """

@@ -60,7 +60,9 @@ jobs:
             https://esperanto.symmachus.org/ \
             https://esperanto.symmachus.org/feed.xml \
             https://toki.symmachus.org/ \
-            https://toki.symmachus.org/feed.xml
+            https://toki.symmachus.org/feed.xml \
+            https://solresol.symmachus.org/ \
+            https://solresol.symmachus.org/feed.xml
           do
             curl --fail --silent --show-error --retry 6 --retry-delay 5 "$url" >/dev/null
           done

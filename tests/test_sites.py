@@ -41,6 +41,14 @@ class ContentTests(unittest.TestCase):
             note = entry["sentence"]["note"].lower()
             self.assertTrue("teaching" in note or "pedagogical" in note, entry["slug"])
 
+    def test_solresol_entries_are_note_sequences(self) -> None:
+        site = build.load_json(ROOT / "content" / "solresol.json")
+        allowed = {"do", "re", "mi", "fa", "sol", "la", "si"}
+        for entry in site["entries"]:
+            self.assertTrue(entry["notes"], entry["slug"])
+            self.assertTrue(set(entry["notes"]) <= allowed, entry["slug"])
+            self.assertEqual(entry["game"], "".join(entry["notes"]), entry["slug"])
+
 
 class BuildTests(unittest.TestCase):
     def test_build_and_internal_links(self) -> None:
@@ -54,6 +62,9 @@ class BuildTests(unittest.TestCase):
             self.assertIn("Cognate Kerfuffle", pie)
             self.assertIn("*bʰer-", pie)
             self.assertTrue((out / "pie" / "graphs" / "bher.svg").is_file())
+            solresol = (out / "solresol" / "index.html").read_text(encoding="utf-8")
+            self.assertIn("data-notes=\"sol,re,sol\"", solresol)
+            self.assertIn("/assets/solresol.js", solresol)
             for key in build.SITE_KEYS:
                 ET.parse(out / key / "feed.xml")
                 rootle = (out / key / "rootle" / "index.html").read_text(encoding="utf-8")
@@ -86,6 +97,7 @@ class PublisherTests(unittest.TestCase):
                 "pie": [{"slug": "bher", "published": "2026-08-12"}],
                 "esperanto": [{"slug": "amiko", "published": "2026-08-12"}],
                 "toki": [{"slug": "toki", "published": "2026-08-12"}],
+                "solresol": [{"slug": "solresol", "published": "2026-08-12"}],
             }
             (temp_content / "state.json").write_text(
                 json.dumps(baseline, indent=2) + "\n", encoding="utf-8"
@@ -96,7 +108,7 @@ class PublisherTests(unittest.TestCase):
                 thursday = publish_due.publish(date(2026, 8, 13))
                 self.assertEqual([], thursday)
                 monday = publish_due.publish(date(2026, 8, 17))
-                self.assertEqual(["pie", "esperanto", "toki"], [item[0] for item in monday])
+                self.assertEqual(["pie", "esperanto", "toki", "solresol"], [item[0] for item in monday])
                 self.assertEqual([], publish_due.publish(date(2026, 8, 17)))
             finally:
                 publish_due.CONTENT = original

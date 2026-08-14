@@ -1,0 +1,321 @@
+{
+  "title_plain": "Solresol Word a Week",
+  "language_label": "Solresol",
+  "lang_code": "art-x-solresol",
+  "base_url": "https://solresol.symmachus.org",
+  "description": "One Solresol word each week, written as notes, digits, colours, and a small playable tune from François Sudre's musical language.",
+  "theme_color": "#3159a6",
+  "cadence": "weekly",
+  "publish_weekday": 0,
+  "weather": "Seven notes, several media, and no donor language hiding in the luggage.",
+  "entries": [
+    {
+      "slug": "solresol",
+      "headword": "solresol",
+      "game": "solresol",
+      "notes": ["sol", "re", "sol"],
+      "pronunciation": "SOL-re-SOL · three spoken or sung notes · 5–2–5",
+      "meanings": ["language", "idiom", "linguistics"],
+      "lede": "The language names language itself with a tiny arch of three notes: sol, down to re, and home to sol.",
+      "origin": {
+        "source_language": "Seven-note spelling",
+        "source_word": "sol · re · sol",
+        "note": "Sudre's dictionary assigns sol–re–sol to language, idiom, dialect, linguistics, and philology. It also became the conventional name of his system.",
+        "comparisons": ["5 · 2 · 5", "blue · orange · blue"]
+      },
+      "sentence": {
+        "original": "Dore domilado solresol.",
+        "gloss": "I speak language",
+        "translation": "I speak Solresol.",
+        "note": "A beginner teaching sentence assembled from the dictionary forms dore, domilado, and solresol. Solresol verbs do not inflect for person here."
+      },
+      "source_note": "The headword and gloss follow the community English dictionary translated from Sudre's original definitions; the sentence is a transparent teaching example, not a quotation from Sudre.",
+      "sources": [
+        {"title": "Solresol Dictionary, translated from Sudre", "url": "https://docs.google.com/spreadsheets/d/1-3lBxMURGN4AtGG846kuVGVNuEiHewCT88PiBahnODA/htmlview"},
+        {"title": "Gajewski's Grammar of Solresol, English translation", "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"}
+      ]
+    },
+    {
+      "slug": "do",
+      "headword": "do",
+      "game": "do",
+      "notes": ["do"],
+      "pronunciation": "DO · one spoken or sung note · 1",
+      "meanings": ["no", "not", "nor"],
+      "lede": "The first note is Solresol's compact refusal and its ordinary negator: one do can say no or make the next idea negative.",
+      "origin": {
+        "source_language": "Seven-note spelling",
+        "source_word": "do",
+        "note": "The first one-note word is do, meaning no, not, or nor. In a negative clause it stands before the word it negates.",
+        "comparisons": ["1", "red"]
+      },
+      "sentence": {
+        "original": "Dore do milasol.",
+        "gloss": "I not love",
+        "translation": "I do not love.",
+        "note": "Gajewski's grammar gives this negation pattern in abbreviated note spelling; the full syllable names are expanded here."
+      },
+      "source_note": "Both the one-note gloss and the position of the negator are explicit in the historical grammar.",
+      "sources": [
+        {"title": "Gajewski's Grammar: interrogation and negation", "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"},
+        {"title": "Solresol Dictionary, translated from Sudre", "url": "https://docs.google.com/spreadsheets/d/1-3lBxMURGN4AtGG846kuVGVNuEiHewCT88PiBahnODA/htmlview"}
+      ]
+    },
+    {
+      "slug": "re",
+      "headword": "re",
+      "game": "re",
+      "notes": ["re"],
+      "pronunciation": "RE · one spoken or sung note · 2",
+      "meanings": ["and"],
+      "lede": "Re is the conjunction that lets two things share a phrase without making either one learn harmony.",
+      "origin": {
+        "source_language": "Seven-note spelling",
+        "source_word": "re",
+        "note": "The second one-note word is the coordinating conjunction and.",
+        "comparisons": ["2", "orange"]
+      },
+      "sentence": {
+        "original": "Dore re domi.",
+        "gloss": "I and you",
+        "translation": "You and me.",
+        "note": "This deliberately tiny teaching phrase isolates re. Longer examples in the grammar coordinate full noun phrases in the same way."
+      },
+      "source_note": "The dictionary gives re as and; the teaching phrase keeps the surrounding vocabulary to two basic pronouns.",
+      "sources": [
+        {"title": "Solresol Dictionary, translated from Sudre", "url": "https://docs.google.com/spreadsheets/d/1-3lBxMURGN4AtGG846kuVGVNuEiHewCT88PiBahnODA/htmlview"},
+        {"title": "Gajewski's Grammar of Solresol, English translation", "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"}
+      ]
+    },
+    {
+      "slug": "mi",
+      "headword": "mi",
+      "game": "mi",
+      "notes": ["mi"],
+      "pronunciation": "MI · one spoken or sung note · 3",
+      "meanings": ["or"],
+      "lede": "Mi is choice compressed to a single note: this or that, cadence optional.",
+      "origin": {
+        "source_language": "Seven-note spelling",
+        "source_word": "mi",
+        "note": "The third one-note word is the conjunction or.",
+        "comparisons": ["3", "yellow"]
+      },
+      "sentence": {
+        "original": "Si mi do?",
+        "gloss": "yes or no",
+        "translation": "Yes or no?",
+        "note": "A teaching question made entirely from one-note words. It demonstrates the dictionary sense without adding a disputed modern construction."
+      },
+      "source_note": "The glosses of mi, si, and do are all listed in Sudre's one-note vocabulary.",
+      "sources": [
+        {"title": "Solresol Dictionary, translated from Sudre", "url": "https://docs.google.com/spreadsheets/d/1-3lBxMURGN4AtGG846kuVGVNuEiHewCT88PiBahnODA/htmlview"}
+      ]
+    },
+    {
+      "slug": "fa",
+      "headword": "fa",
+      "game": "fa",
+      "notes": ["fa"],
+      "pronunciation": "FA · one spoken or sung note · 4",
+      "meanings": ["at", "to"],
+      "lede": "Fa points toward a place or recipient, doing prepositional work with a single green note.",
+      "origin": {
+        "source_language": "Seven-note spelling",
+        "source_word": "fa",
+        "note": "The fourth one-note word is a compact preposition translated as at or to.",
+        "comparisons": ["4", "green"]
+      },
+      "sentence": {
+        "original": "Fa dore.",
+        "gloss": "to me",
+        "translation": "To me.",
+        "note": "This is a teaching prepositional phrase rather than a complete clause, kept short so fa's role remains visible."
+      },
+      "source_note": "The source dictionary gives a broad at/to gloss; English chooses between them from context.",
+      "sources": [
+        {"title": "Solresol Dictionary, translated from Sudre", "url": "https://docs.google.com/spreadsheets/d/1-3lBxMURGN4AtGG846kuVGVNuEiHewCT88PiBahnODA/htmlview"}
+      ]
+    },
+    {
+      "slug": "sol",
+      "headword": "sol",
+      "game": "sol",
+      "notes": ["sol"],
+      "pronunciation": "SOL · one spoken or sung note · 5",
+      "meanings": ["if"],
+      "lede": "Sol opens a condition and then waits—musically and grammatically—for the consequence.",
+      "origin": {
+        "source_language": "Seven-note spelling",
+        "source_word": "sol",
+        "note": "The fifth one-note word introduces a condition: if.",
+        "comparisons": ["5", "blue"]
+      },
+      "sentence": {
+        "original": "Sol si…",
+        "gloss": "if yes",
+        "translation": "If yes…",
+        "note": "A deliberately unfinished teaching fragment: a conditional needs something to happen next, and the ellipsis admits it."
+      },
+      "source_note": "The entry demonstrates the historical one-note gloss without inventing a longer conditional whose tense or word order would distract from it.",
+      "sources": [
+        {"title": "Solresol Dictionary, translated from Sudre", "url": "https://docs.google.com/spreadsheets/d/1-3lBxMURGN4AtGG846kuVGVNuEiHewCT88PiBahnODA/htmlview"}
+      ]
+    },
+    {
+      "slug": "la",
+      "headword": "la",
+      "game": "la",
+      "notes": ["la"],
+      "pronunciation": "LA · one spoken or sung note · 6",
+      "meanings": ["the"],
+      "lede": "La is the definite article—the unusually international-looking member of a vocabulary that otherwise refuses donor-language clues.",
+      "origin": {
+        "source_language": "Seven-note spelling",
+        "source_word": "la",
+        "note": "The sixth one-note word is the definite article the. Its familiar appearance is a consequence of the note name, not an etymological borrowing claim.",
+        "comparisons": ["6", "indigo"]
+      },
+      "sentence": {
+        "original": "La doremi.",
+        "gloss": "the day",
+        "translation": "The day.",
+        "note": "A teaching noun phrase using doremi, the dictionary word for day."
+      },
+      "source_note": "Solresol is a priori: resemblance between la and articles in Romance languages is not treated here as a donor relationship.",
+      "sources": [
+        {"title": "Solresol Dictionary, translated from Sudre", "url": "https://docs.google.com/spreadsheets/d/1-3lBxMURGN4AtGG846kuVGVNuEiHewCT88PiBahnODA/htmlview"}
+      ]
+    },
+    {
+      "slug": "si",
+      "headword": "si",
+      "game": "si",
+      "notes": ["si"],
+      "pronunciation": "SI · one spoken or sung note · 7",
+      "meanings": ["yes", "willingly"],
+      "lede": "At the top of the seven-note ladder, si is assent: yes, agreed, willingly.",
+      "origin": {
+        "source_language": "Seven-note spelling",
+        "source_word": "si",
+        "note": "The seventh one-note word answers yes and can also carry the sense willingly or agreed.",
+        "comparisons": ["7", "violet"]
+      },
+      "sentence": {
+        "original": "Si!",
+        "gloss": "yes",
+        "translation": "Yes!",
+        "note": "A complete one-word utterance. English-language solfège often calls the seventh note ti; historical Solresol uses si."
+      },
+      "source_note": "The historical grammar and Sudre-derived dictionary use si, not the later English solfège label ti.",
+      "sources": [
+        {"title": "Solresol Dictionary, translated from Sudre", "url": "https://docs.google.com/spreadsheets/d/1-3lBxMURGN4AtGG846kuVGVNuEiHewCT88PiBahnODA/htmlview"},
+        {"title": "Gajewski's Grammar of Solresol, English translation", "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"}
+      ]
+    },
+    {
+      "slug": "dore",
+      "headword": "dore",
+      "game": "dore",
+      "notes": ["do", "re"],
+      "pronunciation": "DO-re · two spoken or sung notes · 1–2",
+      "meanings": ["I", "me", "we"],
+      "lede": "Dore is first person without a compulsory headcount: context and number marking decide whether it is I, me, or we.",
+      "origin": {
+        "source_language": "Seven-note spelling",
+        "source_word": "do · re",
+        "note": "The binary sequence do–re is the first-person pronoun, covering subject and object uses and, in the dictionary's broad gloss, singular or plural reference.",
+        "comparisons": ["1 · 2", "red · orange"]
+      },
+      "sentence": {
+        "original": "Dore sidofa.",
+        "gloss": "I begin",
+        "translation": "I begin.",
+        "note": "This is the grammar's basic verb example, expanded from its abbreviated d-r / s-d-f note spelling."
+      },
+      "source_note": "Gajewski explicitly uses this pattern to show that Solresol verbs keep one form rather than agreeing with the subject.",
+      "sources": [
+        {"title": "Gajewski's Grammar: verbs", "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"},
+        {"title": "Solresol Dictionary, translated from Sudre", "url": "https://docs.google.com/spreadsheets/d/1-3lBxMURGN4AtGG846kuVGVNuEiHewCT88PiBahnODA/htmlview"}
+      ]
+    },
+    {
+      "slug": "domi",
+      "headword": "domi",
+      "game": "domi",
+      "notes": ["do", "mi"],
+      "pronunciation": "DO-mi · two spoken or sung notes · 1–3",
+      "meanings": ["you", "yourself"],
+      "lede": "Domi addresses you without forcing Solresol to ask whether that means one listener or a roomful.",
+      "origin": {
+        "source_language": "Seven-note spelling",
+        "source_word": "do · mi",
+        "note": "The binary sequence do–mi is the second-person pronoun, usable for singular or plural you and in reflexive constructions.",
+        "comparisons": ["1 · 3", "red · yellow"]
+      },
+      "sentence": {
+        "original": "Domi lasire domi.",
+        "gloss": "you amuse you",
+        "translation": "You amuse yourself.",
+        "note": "Adapted only by expanding the note names from Gajewski's reflexive-verb example; the repeated pronoun supplies the reflexive object."
+      },
+      "source_note": "The grammar supplies the construction and the dictionary supplies the broad second-person gloss.",
+      "sources": [
+        {"title": "Gajewski's Grammar: reflexive verbs", "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"},
+        {"title": "Solresol Dictionary, translated from Sudre", "url": "https://docs.google.com/spreadsheets/d/1-3lBxMURGN4AtGG846kuVGVNuEiHewCT88PiBahnODA/htmlview"}
+      ]
+    },
+    {
+      "slug": "dofa",
+      "headword": "dofa",
+      "game": "dofa",
+      "notes": ["do", "fa"],
+      "pronunciation": "DO-fa · two spoken or sung notes · 1–4",
+      "meanings": ["he", "she", "it", "they"],
+      "lede": "Dofa handles the rest of the pronoun crowd: people, things, singulars, and plurals, with context and prosody doing the sorting.",
+      "origin": {
+        "source_language": "Seven-note spelling",
+        "source_word": "do · fa",
+        "note": "The binary sequence do–fa is the third-person pronoun across subject and object uses. Historical descriptions separately mark gender and number when needed.",
+        "comparisons": ["1 · 4", "red · green"]
+      },
+      "sentence": {
+        "original": "Dofa sidofa.",
+        "gloss": "they begin",
+        "translation": "They begin.",
+        "note": "A teaching adaptation of the grammar's dore sidofa verb example, substituting the documented third-person pronoun."
+      },
+      "source_note": "The English dictionary deliberately lists several third-person English pronouns because Solresol does not divide this basic form the same way.",
+      "sources": [
+        {"title": "Solresol Dictionary, translated from Sudre", "url": "https://docs.google.com/spreadsheets/d/1-3lBxMURGN4AtGG846kuVGVNuEiHewCT88PiBahnODA/htmlview"},
+        {"title": "Gajewski's Grammar of Solresol, English translation", "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"}
+      ]
+    },
+    {
+      "slug": "mido",
+      "headword": "mido",
+      "game": "mido",
+      "notes": ["mi", "do"],
+      "pronunciation": "MI-do · two spoken or sung notes · 3–1",
+      "meanings": ["for", "in order to"],
+      "lede": "Mido turns toward purpose or beneficiary; reversing its notes to domi produces you, which is peak Rootle mischief.",
+      "origin": {
+        "source_language": "Seven-note spelling",
+        "source_word": "mi · do",
+        "note": "The binary sequence mi–do is translated as for and can introduce purpose. Reversal matters in Solresol: do–mi is the second-person pronoun instead.",
+        "comparisons": ["3 · 1", "yellow · red", "reverse: domi · you"]
+      },
+      "sentence": {
+        "original": "Mido dore.",
+        "gloss": "for me",
+        "translation": "For me.",
+        "note": "A minimal teaching phrase. The historical dictionary's gloss is broader than this single English use."
+      },
+      "source_note": "The reversal comparison is a structural observation from the two independently listed dictionary forms, not a claim that one was historically derived from the other.",
+      "sources": [
+        {"title": "Solresol Dictionary, translated from Sudre", "url": "https://docs.google.com/spreadsheets/d/1-3lBxMURGN4AtGG846kuVGVNuEiHewCT88PiBahnODA/htmlview"},
+        {"title": "Gajewski's Grammar: opposite words by reversal", "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"}
+      ]
+    }
+  ]
+}

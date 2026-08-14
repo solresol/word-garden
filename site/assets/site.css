@@ -34,6 +34,17 @@ html[data-site="toki"] {
   --card: rgba(255, 254, 239, 0.86);
 }
 
+html[data-site="solresol"] {
+  --paper: #eef2fb;
+  --paper-deep: #d8e2f7;
+  --ink: #18294e;
+  --muted: #5d6780;
+  --accent: #3159a6;
+  --accent-soft: #f0c84b;
+  --line: rgba(24, 41, 78, 0.2);
+  --card: rgba(252, 253, 255, 0.86);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -177,6 +188,13 @@ html[data-site="toki"] .word-hero::after {
   content: "☀";
   font-size: clamp(10rem, 25vw, 21rem);
   top: 0.45em;
+}
+
+html[data-site="solresol"] .word-hero::after {
+  content: "♪";
+  font-family: var(--sans);
+  font-size: clamp(11rem, 30vw, 24rem);
+  top: 0.3em;
 }
 
 .eyebrow {
@@ -415,6 +433,58 @@ figcaption {
 .comparison-list {
   color: var(--muted);
   columns: 2;
+}
+
+.note-sequence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.note {
+  background: var(--note-colour);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  color: white;
+  display: grid;
+  min-width: 7rem;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+}
+
+.note span {
+  font-family: var(--serif);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.note small {
+  font-size: 0.7rem;
+  margin-top: 0.45rem;
+  text-transform: uppercase;
+}
+
+.note-do { --note-colour: #ce3f46; }
+.note-re { --note-colour: #d86b28; }
+.note-mi { --note-colour: #e2b923; color: #2d2a14; text-shadow: none; }
+.note-fa { --note-colour: #388452; }
+.note-sol { --note-colour: #3269b3; }
+.note-la { --note-colour: #4e4a91; }
+.note-si { --note-colour: #79428d; }
+
+.play-word {
+  margin: 0 0 1.4rem;
+}
+
+.solresol-spelling > p:not(.caveat) {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  max-width: 48rem;
 }
 
 .sentence blockquote {

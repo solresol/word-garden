@@ -18,6 +18,7 @@ if [ ! -r "$credentials" ]; then
 fi
 
 api_token=${CLOUDFLARE_API_TOKEN:-$(awk -F': *' '$1 == "API token" {print $2; exit}' "$credentials")}
+zone_id=${CLOUDFLARE_ZONE_ID:-$(awk -F': *' '$1 == "ZoneID" {print $2; exit}' "$credentials")}
 if [ -z "$api_token" ]; then
   echo "No API token found in CLOUDFLARE_API_TOKEN or $credentials" >&2
   exit 1
@@ -30,17 +31,19 @@ cf_get() {
     "$api_base/$1"
 }
 
-zone_response=$(cf_get "zones?name=$zone_name") || {
-  echo "Could not look up Cloudflare zone $zone_name" >&2
-  exit 1
-}
-zone_id=$(printf '%s' "$zone_response" | jq -r '.result[0].id // empty')
 if [ -z "$zone_id" ]; then
-  echo "Cloudflare zone not found: $zone_name" >&2
-  exit 1
+  zone_response=$(cf_get "zones?name=$zone_name") || {
+    echo "Could not look up Cloudflare zone $zone_name; add ZoneID to $credentials or grant Zone Read." >&2
+    exit 1
+  }
+  zone_id=$(printf '%s' "$zone_response" | jq -r '.result[0].id // empty')
+  if [ -z "$zone_id" ]; then
+    echo "Cloudflare zone not found: $zone_name" >&2
+    exit 1
+  fi
 fi
 
-for label in pie esperanto toki; do
+for label in pie esperanto toki solresol; do
   hostname="$label.$zone_name"
   records=$(cf_get "zones/$zone_id/dns_records?type=A&name=$hostname") || {
     echo "The token cannot read DNS records. Grant DNS Read and DNS Write for $zone_name." >&2

@@ -12,7 +12,7 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content"
-SITE_KEYS = ("pie", "esperanto", "toki")
+SITE_KEYS = ("pie", "esperanto", "toki", "solresol")
 
 
 def local_today() -> date:

@@ -10,7 +10,7 @@ cd "$project_root"
 python3 scripts/build.py --today "$build_date"
 python3 scripts/verify.py dist
 
-for site in pie esperanto toki; do
+for site in pie esperanto toki solresol; do
   destination="/var/www/vhosts/${site}.symmachus.org/htdocs/"
   rsync -az --delete --exclude .DS_Store "dist/${site}/" "${deploy_user}@${deploy_host}:${destination}"
 done
@@ -18,6 +18,7 @@ done
 ssh "${deploy_user}@${deploy_host}" \
   'test -f /var/www/vhosts/pie.symmachus.org/htdocs/build.json &&
    test -f /var/www/vhosts/esperanto.symmachus.org/htdocs/build.json &&
-   test -f /var/www/vhosts/toki.symmachus.org/htdocs/build.json'
+   test -f /var/www/vhosts/toki.symmachus.org/htdocs/build.json &&
+   test -f /var/www/vhosts/solresol.symmachus.org/htdocs/build.json'
 
-echo "Deployed PIE, Esperanto, and Toki Pona sites for ${build_date} to ${deploy_host}."
+echo "Deployed PIE, Esperanto, Toki Pona, and Solresol sites for ${build_date} to ${deploy_host}."
