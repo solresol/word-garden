@@ -779,15 +779,23 @@ footer p {
 
 @media (max-width: 760px) {
   .site-header {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr;
     padding: 0.8rem 1rem;
   }
 
   .site-header > nav:first-of-type {
-    justify-self: end;
+    gap: 0.1rem;
+    justify-content: center;
+    justify-self: stretch;
   }
 
-  .garden-mark span,
+  .site-header > nav:first-of-type a {
+    font-size: 0.87rem;
+    padding-left: 0.45rem;
+    padding-right: 0.45rem;
+  }
+
+  .garden-mark,
   .site-header .utility-nav {
     display: none;
   }
