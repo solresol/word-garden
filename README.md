@@ -7,7 +7,7 @@ Four static word-of-the-day sites, all deliberately slower than advertised:
 - `toki.symmachus.org` — Toki Pona **word a ~~day~~ week**
 - `solresol.symmachus.org` — Solresol **word a ~~day~~ week**
 
-Each site has a source-linked entry, a tiny example sentence, an archive, RSS and JSON feeds, a `today.json` endpoint, and a weekly Wordle-like game called Rootle. PIE entries add Graphviz family trees and a Cognate Kerfuffle; Esperanto and Toki Pona show documented borrowing routes; Solresol entries turn their seven-note spelling into colours, digits, and a playable phrase.
+Each site has a source-linked entry, a tiny example sentence, an archive, RSS and JSON feeds, a `today.json` endpoint, and a weekly Wordle-like game called Rootle. PIE entries add Graphviz family trees and a Cognate Kerfuffle; Esperanto and Toki Pona show documented borrowing routes; Solresol entries turn their seven-note spelling into a treble-clef score, a playable phrase, and a randomly chosen historical digit, initial, or colour notation.
 
 There is no runtime application or database. Content and publication state are JSON in Git. GitHub Actions builds the static trees and publishes them to `merah`.
 

@@ -78,8 +78,13 @@ def page(
         if feed
         else ""
     )
+    asset_version = revision()[:12]
     page_script = script or ("/assets/solresol.js" if site_key == "solresol" else None)
-    script_tag = f'<script src="{esc(page_script)}" defer></script>' if page_script else ""
+    if page_script:
+        separator = "&" if "?" in page_script else "?"
+        script_tag = f'<script src="{esc(page_script)}{separator}v={esc(asset_version)}" defer></script>'
+    else:
+        script_tag = ""
     return f"""<!doctype html>
 <html lang="en" data-site="{esc(site_key)}">
 <head>
@@ -91,7 +96,7 @@ def page(
   <link rel="canonical" href="{esc(canonical)}">
   {feed_link}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/site.css?v={esc(asset_version)}">
   {script_tag}
 </head>
 <body>
@@ -234,6 +239,51 @@ def origin_markup(site: dict, entry: dict) -> str:
     """
 
 
+def solresol_staff_svg(notes: list[str]) -> str:
+    """Render a modern treble-clef reading of a Solresol note sequence."""
+    y_positions = {
+        "do": 92,
+        "re": 86,
+        "mi": 80,
+        "fa": 74,
+        "sol": 68,
+        "la": 62,
+        "si": 56,
+    }
+    width = max(360, 160 + len(notes) * 64)
+    staff_lines = "".join(
+        f'<line x1="72" y1="{y}" x2="{width - 18}" y2="{y}" />'
+        for y in (32, 44, 56, 68, 80)
+    )
+    rendered_notes = []
+    for index, note in enumerate(notes):
+        x = 132 + index * 64
+        y = y_positions[note]
+        ledger = (
+            f'<line class="ledger-line" x1="{x - 14}" y1="92" x2="{x + 14}" y2="92" />'
+            if note == "do"
+            else ""
+        )
+        rendered_notes.append(
+            f'<g class="music-note" data-note-index="{index}" data-note="{esc(note)}">'
+            f'{ledger}<ellipse cx="{x}" cy="{y}" rx="8.5" ry="6" transform="rotate(-16 {x} {y})" />'
+            f'<line class="note-stem" x1="{x + 7}" y1="{y - 1}" x2="{x + 7}" y2="{y - 34}" />'
+            f'<text x="{x}" y="116">{esc(note)}</text></g>'
+        )
+    spoken = " · ".join(notes)
+    return f"""
+      <figure class="music-score">
+        <svg class="music-staff" viewBox="0 0 {width} 128" role="img" aria-labelledby="staff-title">
+          <title id="staff-title">Treble-clef notation for {esc(spoken)}</title>
+          <g class="staff-lines">{staff_lines}</g>
+          <text class="treble-clef" x="10" y="88" aria-hidden="true">&#119070;</text>
+          {''.join(rendered_notes)}
+        </svg>
+        <figcaption>On a modern treble clef, using C4 through B4.</figcaption>
+      </figure>
+    """
+
+
 def solresol_markup(entry: dict) -> str:
     note_data = {
         "do": (1, "red"),
@@ -244,19 +294,47 @@ def solresol_markup(entry: dict) -> str:
         "la": (6, "indigo"),
         "si": (7, "violet"),
     }
+    initials = {"do": "d", "re": "r", "mi": "m", "fa": "f", "sol": "so", "la": "l", "si": "s"}
     notes = entry["notes"]
     chips = "".join(
-        f'<li class="note note-{esc(note)}"><span>{esc(note)}</span><small>{note_data[note][0]} · {note_data[note][1]}</small></li>'
-        for note in notes
+        f'<li class="note note-{esc(note)}" data-note-index="{index}"><span>{esc(note)}</span><small>{note_data[note][0]} · {note_data[note][1]}</small></li>'
+        for index, note in enumerate(notes)
     )
     spoken = " · ".join(notes)
+    digits = " · ".join(str(note_data[note][0]) for note in notes)
+    abbreviated = " · ".join(initials[note] for note in notes)
+    colour_names = " · ".join(note_data[note][1] for note in notes)
+    colour_lights = "".join(
+        f'<span class="notation-light note-{esc(note)}" title="{esc(note_data[note][1])}"></span>'
+        for note in notes
+    )
     return f"""
     <section class="section-block solresol-spelling" aria-labelledby="spelling-heading">
       <div class="section-heading"><p class="eyebrow">Seven-note spelling</p><h2 id="spelling-heading">Say it, play it, flash it</h2></div>
       <ol class="note-sequence" aria-label="{esc(spoken)}">{chips}</ol>
       <button class="play-word" type="button" data-notes="{esc(','.join(notes))}">▶ Play the word</button>
+      {solresol_staff_svg(notes)}
+      <aside class="notation-hat" data-notation-hat aria-labelledby="notation-hat-heading">
+        <div class="notation-hat-heading">
+          <div><p class="eyebrow">The notation hat</p><h3 id="notation-hat-heading">Another way to write it</h3></div>
+          <button class="shuffle-notation" type="button" data-notation-shuffle>↻ Draw another</button>
+        </div>
+        <div class="notation-display" aria-live="polite">
+          <div class="alt-notation" data-notation="digits">
+            <small>Number notation</small><strong>{esc(digits)}</strong>
+          </div>
+          <div class="alt-notation" data-notation="initials" hidden>
+            <small>Shortened initials</small><strong>{esc(abbreviated)}</strong>
+          </div>
+          <div class="alt-notation" data-notation="colours" hidden>
+            <small>Rainbow signal lights</small>
+            <span class="notation-lights" role="img" aria-label="{esc(colour_names)}">{colour_lights}</span>
+          </div>
+        </div>
+        <p class="notation-source">The alternatives come from <a href="https://upload.wikimedia.org/wikipedia/commons/b/b9/Grammaire_du_Solresol.pdf" rel="external">Gajewski’s 1902 grammar</a>; the hat is less historical.</p>
+      </aside>
       <p>{esc(entry['origin']['note'])}</p>
-      <p class="caveat">Sudre also mapped the notes to the digits 1–7 and the rainbow colours shown above. The pitches played here use a convenient C-major scale; Solresol is about the ordered notes, not absolute pitch.</p>
+      <p class="caveat">Gajewski’s grammar also shows a three-line staff and a special shorthand. This page uses the requested familiar treble clef instead. The playable pitches use a convenient C-major scale; Solresol is about the ordered notes, not absolute pitch.</p>
     </section>
     """
 

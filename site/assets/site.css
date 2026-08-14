@@ -481,6 +481,152 @@ figcaption {
   margin: 0 0 1.4rem;
 }
 
+.play-word:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.note.is-playing {
+  box-shadow: 0 0 0 4px var(--paper), 0 0 0 7px var(--accent);
+}
+
+.music-score {
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  margin: 0 0 1.4rem;
+  max-width: 50rem;
+  overflow: hidden;
+  padding: 0.8rem 1rem 0.6rem;
+}
+
+.music-score svg {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.music-score figcaption {
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-align: right;
+}
+
+.staff-lines line,
+.music-note line {
+  stroke: var(--ink);
+  stroke-linecap: round;
+  stroke-width: 1.8;
+}
+
+.treble-clef {
+  fill: var(--ink);
+  font-family: "Bravura Text", "Noto Music", "Apple Symbols", serif;
+  font-size: 74px;
+}
+
+.music-note ellipse {
+  fill: var(--ink);
+}
+
+.music-note text {
+  fill: var(--muted);
+  font: 700 10px/1 var(--sans);
+  text-anchor: middle;
+}
+
+.music-note.is-playing ellipse {
+  fill: var(--accent);
+}
+
+.music-note.is-playing .note-stem,
+.music-note.is-playing .ledger-line {
+  stroke: var(--accent);
+  stroke-width: 2.8;
+}
+
+.notation-hat {
+  background: color-mix(in srgb, var(--paper-deep) 58%, white);
+  border: 1px dashed var(--accent);
+  border-radius: 1rem;
+  margin: 0 0 1.5rem;
+  max-width: 50rem;
+  padding: 1.15rem;
+}
+
+.notation-hat-heading {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.notation-hat h3,
+.notation-hat p {
+  margin: 0;
+}
+
+.notation-hat h3 {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.shuffle-notation {
+  background: transparent;
+  color: var(--ink);
+  flex: 0 0 auto;
+}
+
+.notation-display {
+  align-items: center;
+  display: flex;
+  min-height: 6.6rem;
+}
+
+.alt-notation small,
+.alt-notation strong {
+  display: block;
+}
+
+.alt-notation small {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.alt-notation strong {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 8vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.notation-lights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.65rem;
+}
+
+.notation-light {
+  background: var(--note-colour);
+  border: 2px solid rgba(0, 0, 0, 0.16);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 0.23rem rgba(255, 255, 255, 0.25), 0 0.25rem 0.8rem rgba(0, 0, 0, 0.12);
+  display: inline-block;
+  height: 2.9rem;
+  width: 2.9rem;
+}
+
+.notation-source {
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
 .solresol-spelling > p:not(.caveat) {
   font-family: var(--serif);
   font-size: 1.2rem;
@@ -839,6 +985,16 @@ footer p {
 
   .comparison-list {
     columns: 1;
+  }
+
+  .note {
+    min-width: 5.6rem;
+    padding: 0.8rem;
+  }
+
+  .notation-hat-heading {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .archive-list a {

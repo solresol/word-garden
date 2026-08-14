@@ -35,6 +35,8 @@ Do not turn a search-result snippet, generated answer, or visual resemblance int
 - Do not describe assigned a priori vocabulary as borrowed or etymologically derived from a language that happens to have a similar syllable.
 - Mark newly assembled phrases as teaching examples. If an example is expanded from the grammar's abbreviated note spelling, say so.
 - Treat colour and digit forms as alternate encodings of the same note sequence, not separate descendants.
+- Render every sequence on a modern treble clef and make the same ordered notes playable. Label the convenient C-major pitches as a presentation choice, not an absolute-pitch rule of the language.
+- Random notation cards may use Gajewski's documented digits, shortened initials, or rainbow colours. Preserve his `so` abbreviation for `sol` and do not improvise historical shorthand signs.
 
 ## Queue discipline
 

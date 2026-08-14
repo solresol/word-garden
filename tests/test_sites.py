@@ -64,7 +64,14 @@ class BuildTests(unittest.TestCase):
             self.assertTrue((out / "pie" / "graphs" / "bher.svg").is_file())
             solresol = (out / "solresol" / "index.html").read_text(encoding="utf-8")
             self.assertIn("data-notes=\"sol,re,sol\"", solresol)
-            self.assertIn("/assets/solresol.js", solresol)
+            self.assertIn("/assets/solresol.js?v=", solresol)
+            self.assertIn("/assets/site.css?v=", solresol)
+            self.assertIn('class="music-staff"', solresol)
+            self.assertIn("Treble-clef notation for sol · re · sol", solresol)
+            self.assertIn('data-notation="digits"', solresol)
+            self.assertIn('data-notation="initials"', solresol)
+            self.assertIn('data-notation="colours"', solresol)
+            self.assertIn("▶ Play the word", solresol)
             for key in build.SITE_KEYS:
                 ET.parse(out / key / "feed.xml")
                 rootle = (out / key / "rootle" / "index.html").read_text(encoding="utf-8")
@@ -85,7 +92,12 @@ class BuildTests(unittest.TestCase):
                 ]
                 build.build_site(key, site, {key: records}, out, date(2026, 8, 12))
                 for entry in site["entries"]:
-                    self.assertTrue((out / key / "archive" / entry["slug"] / "index.html").is_file())
+                    article_path = out / key / "archive" / entry["slug"] / "index.html"
+                    self.assertTrue(article_path.is_file())
+                    if key == "solresol":
+                        article = article_path.read_text(encoding="utf-8")
+                        self.assertIn('class="music-staff"', article, entry["slug"])
+                        self.assertIn("▶ Play the word", article, entry["slug"])
 
 
 class PublisherTests(unittest.TestCase):

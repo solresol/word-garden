@@ -9,7 +9,37 @@
     si: 493.88,
   };
 
+  const randomIndex = (length) => {
+    if (window.crypto?.getRandomValues) {
+      const value = new Uint32Array(1);
+      window.crypto.getRandomValues(value);
+      return value[0] % length;
+    }
+    return Math.floor(Math.random() * length);
+  };
+
+  const drawNotation = (hat, avoid = null) => {
+    const panels = [...hat.querySelectorAll("[data-notation]")];
+    const choices = panels.filter((panel) => panel.dataset.notation !== avoid);
+    const selected = choices[randomIndex(choices.length)];
+    panels.forEach((panel) => {
+      panel.hidden = panel !== selected;
+    });
+    return selected.dataset.notation;
+  };
+
+  document.querySelectorAll("[data-notation-hat]").forEach((hat) => {
+    hat.dataset.currentNotation = drawNotation(hat);
+  });
+
   document.addEventListener("click", async (event) => {
+    const shuffle = event.target.closest("[data-notation-shuffle]");
+    if (shuffle) {
+      const hat = shuffle.closest("[data-notation-hat]");
+      hat.dataset.currentNotation = drawNotation(hat, hat.dataset.currentNotation);
+      return;
+    }
+
     const button = event.target.closest(".play-word");
     if (!button) return;
 
@@ -20,6 +50,11 @@
       return;
     }
 
+    const originalLabel = button.textContent;
+    const spelling = button.closest(".solresol-spelling");
+    const visualNotes = spelling.querySelectorAll("[data-note-index]");
+    button.disabled = true;
+    button.textContent = "♪ Playing…";
     const context = new AudioContext();
     await context.resume();
     const start = context.currentTime + 0.04;
@@ -35,7 +70,17 @@
       oscillator.connect(gain).connect(context.destination);
       oscillator.start(noteStart);
       oscillator.stop(noteStart + 0.3);
+      window.setTimeout(() => {
+        visualNotes.forEach((element) => {
+          element.classList.toggle("is-playing", Number(element.dataset.noteIndex) === index);
+        });
+      }, index * 340);
     });
-    window.setTimeout(() => context.close(), notes.length * 340 + 500);
+    window.setTimeout(() => {
+      visualNotes.forEach((element) => element.classList.remove("is-playing"));
+      button.disabled = false;
+      button.textContent = originalLabel;
+      context.close();
+    }, notes.length * 340 + 250);
   });
 })();
