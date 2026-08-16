@@ -3,24 +3,40 @@
     {
       "slug": "bher",
       "published": "2026-08-12"
+    },
+    {
+      "slug": "h1ed",
+      "published": "2026-08-17"
     }
   ],
   "esperanto": [
     {
       "slug": "amiko",
       "published": "2026-08-12"
+    },
+    {
+      "slug": "akvo",
+      "published": "2026-08-17"
     }
   ],
   "toki": [
     {
       "slug": "toki",
       "published": "2026-08-12"
+    },
+    {
+      "slug": "pona",
+      "published": "2026-08-17"
     }
   ],
   "solresol": [
     {
       "slug": "solresol",
       "published": "2026-08-12"
+    },
+    {
+      "slug": "do",
+      "published": "2026-08-17"
     }
   ]
 }
