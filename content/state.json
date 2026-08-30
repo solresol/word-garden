@@ -11,6 +11,10 @@
     {
       "slug": "steh2",
       "published": "2026-08-24"
+    },
+    {
+      "slug": "weyd",
+      "published": "2026-08-31"
     }
   ],
   "esperanto": [
@@ -25,6 +29,10 @@
     {
       "slug": "hundo",
       "published": "2026-08-24"
+    },
+    {
+      "slug": "birdo",
+      "published": "2026-08-31"
     }
   ],
   "toki": [
@@ -39,6 +47,10 @@
     {
       "slug": "jan",
       "published": "2026-08-24"
+    },
+    {
+      "slug": "moku",
+      "published": "2026-08-31"
     }
   ],
   "solresol": [
@@ -53,6 +65,10 @@
     {
       "slug": "re",
       "published": "2026-08-24"
+    },
+    {
+      "slug": "mi",
+      "published": "2026-08-31"
     }
   ]
 }
