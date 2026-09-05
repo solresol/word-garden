@@ -4,4 +4,4 @@ Except where a linked source or embedded notice says otherwise, the original pro
 
 Attribution: “Word Garden, Greg Baker, 2026” with a link to the relevant site or repository.
 
-This notice does not relicense third-party dictionaries, reference works, or websites. The repository links to those sources and contains short factual descriptions rather than copies of their entries.
+This notice does not relicense third-party dictionaries, reference works, or websites. The English glossary snapshot in `content/solresol-lexicon.json` is attributed to Garrison Osteen and the Solresol community in its source metadata; it is excluded from the licence on Word Garden's original editorial content.

@@ -7,7 +7,11 @@ Four static word-of-the-day sites, all deliberately slower than advertised:
 - `toki.symmachus.org` — Toki Pona **word a ~~day~~ week**
 - `solresol.symmachus.org` — Solresol **word a ~~day~~ week**
 
-Each site has a source-linked entry, a tiny example sentence, an archive, RSS and JSON feeds, a `today.json` endpoint, and a weekly Wordle-like game called Rootle. PIE entries add Graphviz family trees and a Cognate Kerfuffle; Esperanto and Toki Pona show documented borrowing routes; Solresol entries turn their seven-note spelling into a treble-clef score, a playable phrase, and a randomly chosen historical digit, initial, or colour notation.
+Each site has a source-linked entry, a tiny example sentence, an archive, RSS and JSON feeds, a `today.json` endpoint, and a Wordle-like game called Rootle. PIE entries add Graphviz family trees and a Cognate Kerfuffle; Esperanto and Toki Pona show documented borrowing routes; Solresol words and sentences have treble-clef scores and audio playback.
+
+Rootle randomly draws from entries published before the current featured word. Each browser remembers selected words and game progress in local storage. A new day in Sydney selects another unused word; finishing a game also offers the next unused word. Exhausted pools wait for new publications. Clearing browser storage clears that history. Solresol uses seven piano keys (or number keys 1–7), one note per tile, and English dictionary feedback for guesses.
+
+`content/solresol-lexicon.json` is a dated snapshot of 2,660 English glosses from the community-edited Garrison Osteen translation of Sudre, with the source URL and CSV hash. It supplies guess feedback, independently of the publication queue. Some assignments differ from Gajewski; unlisted sequences are not assigned invented meanings. Builds use the saved snapshot and do not fetch the dictionary.
 
 There is no runtime application or database. Content and publication state are JSON in Git. GitHub Actions builds the static trees and publishes them to `merah`.
 

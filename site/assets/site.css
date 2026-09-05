@@ -496,7 +496,7 @@ figcaption {
   border-radius: 1rem;
   margin: 0 0 1.4rem;
   max-width: 50rem;
-  overflow: hidden;
+  overflow-x: auto;
   padding: 0.8rem 1rem 0.6rem;
 }
 
@@ -794,6 +794,10 @@ footer p {
   max-width: 35rem;
 }
 
+.rootle-intro {
+  padding: 3rem 0 1.5rem;
+}
+
 .game-meta,
 .game-actions {
   align-items: center;
@@ -895,6 +899,58 @@ footer p {
   flex: 1.5;
   max-width: 4.4rem;
 }
+
+.piano {
+  display: flex;
+  height: 11rem;
+  position: relative;
+  border: 6px solid #182033;
+  border-radius: 0.5rem;
+  background: #182033;
+}
+
+.piano .piano-key {
+  align-items: flex-end;
+  background: linear-gradient(#eee, #fff 65%);
+  border: 1px solid #7b8290;
+  border-radius: 0 0 0.25rem 0.25rem;
+  box-shadow: inset 0 -5px 0 #cbd0da;
+  color: #18294e;
+  display: flex;
+  font-size: clamp(0.85rem, 3vw, 1.1rem);
+  height: 100%;
+  justify-content: center;
+  max-width: none;
+  min-width: 0;
+  padding-bottom: 1rem;
+}
+
+.piano .piano-key.correct { background: #3d8057; color: white; }
+.piano .piano-key.present { background: #b98a26; color: white; }
+.piano .piano-key.absent { background: #686b66; color: white; }
+.piano .piano-key.pressed,
+.piano .piano-key:active { box-shadow: inset 0 4px 12px #18203388; transform: translateY(2px); }
+.piano .piano-key:focus-visible { outline: 3px solid var(--accent); outline-offset: -5px; }
+
+.piano-black-key {
+  background: linear-gradient(90deg, #111827, #343c4b, #111827);
+  border: 1px solid #080e18;
+  border-radius: 0 0 0.25rem 0.25rem;
+  box-shadow: 0 4px 3px #0006;
+  height: 58%;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 8%;
+}
+
+.piano-controls { justify-content: space-between; margin-top: 0.5rem; }
+.piano-controls .key.wide { max-width: 9rem; }
+.guess-meanings { padding-left: 1.5rem; }
+.guess-meanings li { margin: 0.4rem 0; }
+
+html[data-site="solresol"] .tile { text-transform: none; font-size: 1.3rem; }
 
 .game-status {
   font-weight: 700;

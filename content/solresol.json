@@ -7,7 +7,6 @@
   "theme_color": "#3159a6",
   "cadence": "weekly",
   "publish_weekday": 0,
-  "weather": "Seven notes, several media, and no donor language hiding in the luggage.",
   "entries": [
     {
       "slug": "solresol",
@@ -105,7 +104,7 @@
         "original": "Si mi do?",
         "gloss": "yes or no",
         "translation": "Yes or no?",
-        "note": "A teaching question made entirely from one-note words. It demonstrates the dictionary sense without adding a disputed modern construction."
+        "note": "A teaching question made entirely from one-note words."
       },
       "source_note": "The glosses of mi, si, and do are all listed in Sudre's one-note vocabulary.",
       "sources": [

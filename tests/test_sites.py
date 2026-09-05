@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -49,6 +51,26 @@ class ContentTests(unittest.TestCase):
             self.assertTrue(set(entry["notes"]) <= allowed, entry["slug"])
             self.assertEqual(entry["game"], "".join(entry["notes"]), entry["slug"])
 
+    def test_solresol_lexicon_has_valid_sequences_and_provenance(self) -> None:
+        lexicon = build.load_json(ROOT / "content" / "solresol-lexicon.json")
+        self.assertGreater(len(lexicon["words"]), 2500)
+        self.assertTrue(lexicon["source"]["url"].startswith("https://"))
+        self.assertRegex(lexicon["source"]["sha256"], r"^[a-f0-9]{64}$")
+        for word, gloss in lexicon["words"].items():
+            self.assertRegex(word, r"^(?:do|re|mi|fa|sol|la|si){1,4}$")
+            self.assertTrue(gloss.strip(), word)
+        self.assertIn("Language", lexicon["words"]["solresol"])
+        self.assertEqual("And", lexicon["words"]["re"])
+
+    def test_solresol_sentence_score_and_audio_preserve_words(self) -> None:
+        markup = build.solresol_sentence_markup({"original": "Dore domilado solresol."})
+        self.assertIn('data-notes="do,re,do,mi,la,do,sol,re,sol"', markup)
+        self.assertIn('data-breaks="2,6"', markup)
+        self.assertEqual(9, markup.count('class="music-note"'))
+        self.assertIn('id="sentence-staff-title"', markup)
+        with self.assertRaisesRegex(ValueError, "Unrecognised"):
+            build.solresol_sentence_markup({"original": "Dore invalid."})
+
 
 class BuildTests(unittest.TestCase):
     def test_build_and_internal_links(self) -> None:
@@ -75,8 +97,8 @@ class BuildTests(unittest.TestCase):
             for key in build.SITE_KEYS:
                 ET.parse(out / key / "feed.xml")
                 rootle = (out / key / "rootle" / "index.html").read_text(encoding="utf-8")
-                self.assertIn('"cadence": "weekly"', rootle)
-                self.assertIn("Guess this week’s", rootle)
+                self.assertIn('"answers": []', rootle)
+                self.assertIn("Guess an earlier", rootle)
                 today = json.loads((out / key / "api" / "today.json").read_text(encoding="utf-8"))
                 self.assertEqual("2026-08-12", today["published"])
 
@@ -98,6 +120,40 @@ class BuildTests(unittest.TestCase):
                         article = article_path.read_text(encoding="utf-8")
                         self.assertIn('class="music-staff"', article, entry["slug"])
                         self.assertIn("▶ Play the word", article, entry["slug"])
+                        self.assertIn("▶ Play the sentence", article, entry["slug"])
+                        self.assertEqual(2, article.count('class="music-staff"'))
+                        self.assertNotIn("Etymological weather", article)
+                        self.assertEqual(1, article.count('id="staff-title"'))
+                        self.assertEqual(1, article.count('id="sentence-staff-title"'))
+
+    def test_rootle_excludes_current_and_unpublished_entries(self) -> None:
+        state = build.load_json(ROOT / "content" / "state.json")
+        today = date(2026, 9, 5)
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "dist"
+            build.build(out, today)
+            for key in build.SITE_KEYS:
+                site = build.load_json(ROOT / "content" / f"{key}.json")
+                published = build.published_entries(site, state[key], today)
+                markup = (out / key / "rootle" / "index.html").read_text()
+                config = json.loads(re.search(r"window.ROOTLE_CONFIG=(.*?);</script>", markup, re.S)[1])
+                expected = {entry["slug"] for published_date, entry in published if published_date < published[0][0]}
+                self.assertEqual(expected, {entry["slug"] for entry in config["answers"]})
+                self.assertNotIn(published[0][1]["slug"], expected)
+                self.assertIn("/assets/rootle-engine.js?v=", markup)
+                if key == "solresol":
+                    self.assertIn("/assets/solresol.js?v=", markup)
+                    self.assertIn('aria-label="Piano keyboard"', markup)
+                    self.assertTrue((out / key / "api" / "solresol-lexicon.json").is_file())
+                    for entry in config["answers"]:
+                        self.assertTrue(set(entry["tokens"]) <= {"do", "re", "mi", "fa", "sol", "la", "si"})
+
+
+class RootleTests(unittest.TestCase):
+    @unittest.skipUnless(shutil.which("node"), "Node.js is required for browser game rule tests")
+    def test_game_rules(self) -> None:
+        result = subprocess.run(["node", "--test", str(ROOT / "tests" / "test_rootle.cjs")], text=True, capture_output=True)
+        self.assertEqual(0, result.returncode, result.stdout + result.stderr)
 
 
 class PublisherTests(unittest.TestCase):

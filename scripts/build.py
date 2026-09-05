@@ -7,6 +7,7 @@ import argparse
 import html
 import json
 import os
+import re
 import shutil
 import subprocess
 from datetime import date, datetime, time, timezone
@@ -79,12 +80,15 @@ def page(
         else ""
     )
     asset_version = revision()[:12]
-    page_script = script or ("/assets/solresol.js" if site_key == "solresol" else None)
-    if page_script:
-        separator = "&" if "?" in page_script else "?"
-        script_tag = f'<script src="{esc(page_script)}{separator}v={esc(asset_version)}" defer></script>'
-    else:
-        script_tag = ""
+    page_scripts = ["/assets/solresol.js"] if site_key == "solresol" else []
+    if script == "/assets/rootle.js":
+        page_scripts.append("/assets/rootle-engine.js")
+    if script:
+        page_scripts.append(script)
+    script_tag = "".join(
+        f'<script src="{esc(src)}?v={esc(asset_version)}" defer></script>'
+        for src in page_scripts
+    )
     return f"""<!doctype html>
 <html lang="en" data-site="{esc(site_key)}">
 <head>
@@ -239,7 +243,7 @@ def origin_markup(site: dict, entry: dict) -> str:
     """
 
 
-def solresol_staff_svg(notes: list[str]) -> str:
+def solresol_staff_svg(notes: list[str], *, title_id: str = "staff-title", breaks: list[int] | None = None) -> str:
     """Render a modern treble-clef reading of a Solresol note sequence."""
     y_positions = {
         "do": 92,
@@ -250,14 +254,15 @@ def solresol_staff_svg(notes: list[str]) -> str:
         "la": 62,
         "si": 56,
     }
-    width = max(360, 160 + len(notes) * 64)
+    breaks = breaks or []
+    width = max(360, 160 + len(notes) * 64 + len(breaks) * 24)
     staff_lines = "".join(
         f'<line x1="72" y1="{y}" x2="{width - 18}" y2="{y}" />'
         for y in (32, 44, 56, 68, 80)
     )
     rendered_notes = []
     for index, note in enumerate(notes):
-        x = 132 + index * 64
+        x = 132 + index * 64 + sum(boundary <= index for boundary in breaks) * 24
         y = y_positions[note]
         ledger = (
             f'<line class="ledger-line" x1="{x - 14}" y1="92" x2="{x + 14}" y2="92" />'
@@ -273,14 +278,33 @@ def solresol_staff_svg(notes: list[str]) -> str:
     spoken = " · ".join(notes)
     return f"""
       <figure class="music-score">
-        <svg class="music-staff" viewBox="0 0 {width} 128" role="img" aria-labelledby="staff-title">
-          <title id="staff-title">Treble-clef notation for {esc(spoken)}</title>
+        <svg class="music-staff" viewBox="0 0 {width} 128" role="img" aria-labelledby="{esc(title_id)}"{f' style="min-width: {width}px"' if len(notes) > 5 else ''}>
+          <title id="{esc(title_id)}">Treble-clef notation for {esc(spoken)}</title>
           <g class="staff-lines">{staff_lines}</g>
           <text class="treble-clef" x="10" y="88" aria-hidden="true">&#119070;</text>
           {''.join(rendered_notes)}
         </svg>
         <figcaption>On a modern treble clef, using C4 through B4.</figcaption>
       </figure>
+    """
+
+
+def solresol_sentence_markup(sentence: dict) -> str:
+    words = re.findall(r"[a-z]+", sentence["original"].lower())
+    notes: list[str] = []
+    breaks = []
+    for word in words:
+        if not re.fullmatch(r"(?:do|re|mi|fa|sol|la|si)+", word):
+            raise ValueError(f"Unrecognised Solresol sentence word: {word}")
+        if notes:
+            breaks.append(len(notes))
+        notes.extend(re.findall(r"do|re|mi|fa|sol|la|si", word))
+    return f"""
+      <div class="solresol-spelling sentence-music">
+        <button class="play-word" type="button" data-notes="{esc(','.join(notes))}" data-breaks="{esc(','.join(map(str, breaks)))}">▶ Play the sentence</button>
+        {solresol_staff_svg(notes, title_id='sentence-staff-title', breaks=breaks)}
+        <p class="caveat">There is a short pause between words. The C-major pitches are a playback choice.</p>
+      </div>
     """
 
 
@@ -334,7 +358,7 @@ def solresol_markup(entry: dict) -> str:
         <p class="notation-source">The alternatives come from <a href="https://upload.wikimedia.org/wikipedia/commons/b/b9/Grammaire_du_Solresol.pdf" rel="external">Gajewski’s 1902 grammar</a>; the hat is less historical.</p>
       </aside>
       <p>{esc(entry['origin']['note'])}</p>
-      <p class="caveat">Gajewski’s grammar also shows a three-line staff and a special shorthand. This page uses the requested familiar treble clef instead. The playable pitches use a convenient C-major scale; Solresol is about the ordered notes, not absolute pitch.</p>
+      <p class="caveat">Gajewski’s grammar also shows a three-line staff and a special shorthand. Here, the notes appear on a modern treble clef. The C-major pitches are a playback choice; Solresol does not require absolute pitch.</p>
     </section>
     """
 
@@ -352,6 +376,10 @@ def article_markup(site_key: str, site: dict, entry: dict, published: date) -> s
     else:
         relation = origin_markup(site, entry)
     weather = entry.get("weather", site.get("weather", "Clear enough to bring a comparative dictionary."))
+    weather_markup = "" if site_key == "solresol" else f"""
+      <aside class="weather" aria-label="Etymological weather">
+        <span aria-hidden="true">◌</span><div><p class="eyebrow">Etymological weather</p><p>{esc(weather)}</p></div>
+      </aside>"""
     return f"""
     <article>
       <header class="word-hero">
@@ -364,20 +392,19 @@ def article_markup(site_key: str, site: dict, entry: dict, published: date) -> s
       </header>
       {relation}
       <section class="section-block sentence" aria-labelledby="sentence-heading">
-        <div class="section-heading"><p class="eyebrow">Tiny sentence</p><h2 id="sentence-heading">Use it before it gets complicated</h2></div>
+        <div class="section-heading"><h2 id="sentence-heading">Tiny sentence</h2></div>
         <blockquote lang="{esc(site['lang_code'])}">{esc(entry['sentence']['original'])}</blockquote>
         {f'<p class="word-gloss">{esc(entry["sentence"]["gloss"])}</p>' if entry['sentence'].get('gloss') else ''}
         <p class="translation">“{esc(entry['sentence']['translation'])}”</p>
         <p class="caveat">{esc(entry['sentence']['note'])}</p>
+        {solresol_sentence_markup(entry['sentence']) if site_key == 'solresol' else ''}
       </section>
-      <aside class="weather" aria-label="Etymological weather">
-        <span aria-hidden="true">◌</span><div><p class="eyebrow">Etymological weather</p><p>{esc(weather)}</p></div>
-      </aside>
+      {weather_markup}
       <section class="section-block sources" aria-labelledby="sources-heading">
         <div class="section-heading"><p class="eyebrow">Receipts</p><h2 id="sources-heading">Sources and cautions</h2></div>
         <p>{esc(entry['source_note'])}</p><ul>{sources}</ul>
       </section>
-      <nav class="end-nav" aria-label="After the word"><a class="button" href="/rootle/">Play this week’s Rootle</a><a href="/archive/">Browse the archive →</a></nav>
+      <nav class="end-nav" aria-label="After the word"><a class="button" href="/rootle/">Play Rootle</a><a href="/archive/">Browse the archive →</a></nav>
     </article>
     """
 
@@ -398,7 +425,7 @@ def about_markup(site_key: str, site: dict) -> str:
     if site_key == "pie":
         special = "Proto-Indo-European is reconstructed, not recorded. An asterisk marks a scholarly reconstruction; forms and mini-sentences can vary by model. The diagrams show selected, defensible routes rather than claiming every lookalike is a cousin."
     elif site_key == "solresol":
-        special = "Solresol is built a priori from sequences of seven notes, so there is no donor language to pretend it borrowed from. The spelling card instead shows each note as a syllable, digit, colour, and playable pitch. Glosses follow the historical grammar and the community English dictionary, with teaching snippets labelled as such."
+        special = "Solresol assigns words sequences of seven notes. The spelling card shows each note as a syllable, digit, colour, and playable pitch. Glosses follow the historical grammar and the community English dictionary, with teaching examples labelled as such."
     else:
         special = "A planned language can still have a past. The origin cards identify documented models or source words, while the example sentence shows present-day use. Similarity alone is never treated as proof of borrowing."
     return f"""
@@ -415,31 +442,40 @@ def about_markup(site_key: str, site: dict) -> str:
 
 
 def rootle_markup(site_key: str, site: dict, entries: list[dict]) -> str:
-    answers = [{"answer": entry["game"].lower(), "display": entry["headword"], "hint": entry["meanings"][0]} for entry in entries]
+    answers = [{"slug": entry["slug"], "tokens": entry["notes"] if site_key == "solresol" else list(entry["game"].lower()), "display": entry["headword"], "hint": entry["meanings"][0]} for entry in entries]
     config = json.dumps(
         {
             "site": site_key,
             "language": site["language_label"],
             "answers": answers,
-            "anchor": "2026-08-10",
-            "cadence": site["cadence"],
-            "period_label": "This week’s" if site["cadence"] == "weekly" else "Today’s",
+            "lexicon": f"/api/solresol-lexicon.json?v={revision()[:12]}" if site_key == "solresol" else None,
             "time_zone": "Australia/Sydney",
         },
         ensure_ascii=False,
     ).replace("</", "<\\/")
+    unit = "note" if site_key == "solresol" else "letter"
+    instructions = "Play the notes on the piano, then press Enter. You can also use number keys 1–7." if site_key == "solresol" else "Type a word, then press Enter."
+    if site_key == "pie":
+        instructions += " Use plain letters; don't worry about subscripts."
+    dictionary_note = ""
+    if site_key == "solresol":
+        source = load_json(CONTENT_DIR / "solresol-lexicon.json")["source"]
+        dictionary_note = f'<p class="caveat">Guess meanings use the <a href="{esc(source["url"])}">community-edited English translation of Sudre’s dictionary</a>. Some assignments differ from Gajewski’s grammar. Unlisted sequences are marked as such. The piano uses C-major pitches.</p>'
     return f"""
-    <header class="simple-hero rootle-intro"><p class="eyebrow">A family resemblance game</p><h1>Rootle</h1>
-    <p>Guess this week’s {esc(site['language_label'])} word in six tries. Accents, asterisks, and laryngeal subscripts stay outside the tiles; the hint does not.</p></header>
+    <header class="simple-hero rootle-intro"><p class="eyebrow">Words from the archive</p><h1>Rootle</h1>
+    <p>Guess an earlier {esc(site['language_label'])} word in six tries. {esc(instructions)}</p></header>
     <section class="game" aria-labelledby="game-heading">
       <div class="game-meta"><span id="puzzle-number"></span><button id="hint-button" type="button">Reveal a hint</button></div>
       <p id="hint" class="hint" hidden></p>
       <h2 id="game-heading" class="visually-hidden">Rootle board</h2>
       <div id="board" class="board" aria-live="polite"></div>
       <p id="game-status" class="game-status" aria-live="assertive"></p>
-      <div id="keyboard" class="keyboard" aria-label="On-screen keyboard"></div>
-      <div class="game-actions"><button id="share-button" type="button" hidden>Copy result</button><button id="new-game-button" type="button" hidden>Replay</button></div>
-      <details><summary>How to play</summary><p>Green is the right letter in the right place; ochre belongs elsewhere; grey is absent. Any alphabetic guess of the right length is accepted—historical spelling should not become a bouncer.</p></details>
+      <ol id="guess-meanings" class="guess-meanings" aria-live="polite" hidden></ol>
+      <div id="keyboard" class="keyboard" aria-label="{'Piano keyboard' if site_key == 'solresol' else 'On-screen keyboard'}"></div>
+      <div class="game-actions"><button id="share-button" type="button" hidden>Copy result</button><button id="new-game-button" type="button" hidden>Next word</button></div>
+      <p id="storage-status" class="caveat">A random earlier word each day, with another available after you finish. Used words are saved in this browser. When you have tried them all, a new publication will make another word available.</p>
+      <details><summary>How to play</summary><p>Green is the right {unit} in the right place; ochre belongs elsewhere; grey is absent. Each guess needs the shown number of {unit}s.</p>{dictionary_note}</details>
+      <noscript><p>Rootle needs JavaScript. You can still <a href="/archive/">read the archive</a>.</p></noscript>
     </section>
     <script>window.ROOTLE_CONFIG={config};</script>
     """
@@ -558,13 +594,16 @@ def build_site(site_key: str, site: dict, state: dict, out_root: Path, today: da
             site_key,
             site,
             f"Rootle — {site['title_plain']}",
-            f"A weekly {site['language_label']} word-guessing game.",
+            f"Guess an earlier {site['language_label']} word.",
             f"{site['base_url']}/rootle/",
-            rootle_markup(site_key, site, site["entries"]),
+            rootle_markup(site_key, site, [entry for published_date, entry in published if published_date < current_date]),
             script="/assets/rootle.js",
         ),
         encoding="utf-8",
     )
+
+    if site_key == "solresol":
+        write_json(site_out / "api" / "solresol-lexicon.json", load_json(CONTENT_DIR / "solresol-lexicon.json"))
 
     (site_out / "feed.xml").write_text(rss_xml(site, published), encoding="utf-8")
     json_items = [
