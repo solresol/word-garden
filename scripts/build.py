@@ -99,7 +99,7 @@ def page(
   <meta name="theme-color" content="{esc(site['theme_color'])}">
   <link rel="canonical" href="{esc(canonical)}">
   {feed_link}
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon.svg?v={esc(asset_version)}" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/site.css?v={esc(asset_version)}">
   {script_tag}
 </head>
@@ -217,7 +217,7 @@ def lineage_markup(entry: dict) -> str:
     <section class="section-block lineage" aria-labelledby="family-heading">
       <div class="section-heading"><p class="eyebrow">Then → now</p><h2 id="family-heading">The family reunion</h2></div>
       <figure>
-        <img src="/graphs/{esc(entry['slug'])}.svg" alt="{esc(alt)}" loading="lazy">
+        <img src="/graphs/{esc(entry['slug'])}.svg?v={esc(revision()[:12])}" alt="{esc(alt)}" loading="lazy">
         <figcaption>Selected routes, not an exhaustive family tree. Intermediate forms are simplified for a readable first look.</figcaption>
       </figure>
       <ul class="descendant-cards">{''.join(cards)}</ul>

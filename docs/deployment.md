@@ -13,6 +13,8 @@ Static files are published as `wordgarden:wordgarden` to:
 
 The required OpenBSD `httpd` blocks are in `infra/httpd.conf`. They deliberately omit directory indexes and CGI.
 
+On `merah`, these blocks live in `/etc/httpd-word-garden.conf`, included by the administrator-owned `/etc/httpd.conf`. The location rules supply SVG, RSS, and sitemap media types missing from the host's global type table. An HTTP 200 response alone is insufficient: browsers cannot display SVG images served as `application/octet-stream`. Keep these rules when updating the included file, validate with `httpd -n`, and reload only after validation passes. SVG URLs include the build revision so browsers and Cloudflare do not reuse older responses with incorrect media types.
+
 After an administrator adds the blocks:
 
 ```sh

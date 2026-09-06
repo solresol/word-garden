@@ -54,15 +54,24 @@ jobs:
           scripts/deploy.sh
       - name: Verify public endpoints
         run: |
-          for url in \
-            https://pie.symmachus.org/ \
-            https://pie.symmachus.org/feed.xml \
-            https://esperanto.symmachus.org/ \
-            https://esperanto.symmachus.org/feed.xml \
-            https://toki.symmachus.org/ \
-            https://toki.symmachus.org/feed.xml \
-            https://solresol.symmachus.org/ \
-            https://solresol.symmachus.org/feed.xml
-          do
-            curl --fail --silent --show-error --retry 6 --retry-delay 5 "$url" >/dev/null
+          check_type() {
+            url=$1
+            expected=$2
+            actual=$(curl --fail --silent --show-error --retry 6 --retry-delay 5 \
+              --output /dev/null --write-out '%{content_type}' "$url")
+            case "$actual" in
+              "$expected"|"$expected;"*) ;;
+              *) echo "$url: expected $expected, got $actual" >&2; return 1 ;;
+            esac
+          }
+          revision=$(git rev-parse --short=12 HEAD)
+          for site in pie esperanto toki solresol; do
+            base="https://${site}.symmachus.org"
+            check_type "$base/" text/html
+            check_type "$base/feed.xml" application/rss+xml
+            check_type "$base/sitemap.xml" application/xml
+            check_type "$base/assets/favicon.svg?v=$revision" image/svg+xml
+          done
+          for graph in dist/pie/graphs/*.svg; do
+            check_type "https://pie.symmachus.org/graphs/$(basename "$graph")?v=$revision" image/svg+xml
           done
