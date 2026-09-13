@@ -19,6 +19,10 @@
     {
       "slug": "h1es",
       "published": "2026-09-07"
+    },
+    {
+      "slug": "genh1",
+      "published": "2026-09-14"
     }
   ],
   "esperanto": [
@@ -41,6 +45,10 @@
     {
       "slug": "hejmo",
       "published": "2026-09-07"
+    },
+    {
+      "slug": "libro",
+      "published": "2026-09-14"
     }
   ],
   "toki": [
@@ -63,6 +71,10 @@
     {
       "slug": "suli",
       "published": "2026-09-07"
+    },
+    {
+      "slug": "lili",
+      "published": "2026-09-14"
     }
   ],
   "solresol": [
@@ -85,6 +97,10 @@
     {
       "slug": "fa",
       "published": "2026-09-07"
+    },
+    {
+      "slug": "sol",
+      "published": "2026-09-14"
     }
   ]
 }
