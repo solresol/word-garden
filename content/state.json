@@ -31,6 +31,10 @@
     {
       "slug": "wodr",
       "published": "2026-09-28"
+    },
+    {
+      "slug": "meh2ter",
+      "published": "2026-10-05"
     }
   ],
   "esperanto": [
@@ -65,6 +69,10 @@
     {
       "slug": "paroli",
       "published": "2026-09-28"
+    },
+    {
+      "slug": "suno",
+      "published": "2026-10-05"
     }
   ],
   "toki": [
@@ -99,6 +107,10 @@
     {
       "slug": "suno",
       "published": "2026-09-28"
+    },
+    {
+      "slug": "kasi",
+      "published": "2026-10-05"
     }
   ],
   "solresol": [
@@ -133,6 +145,10 @@
     {
       "slug": "si",
       "published": "2026-09-28"
+    },
+    {
+      "slug": "dore",
+      "published": "2026-10-05"
     }
   ]
 }
