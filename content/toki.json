@@ -216,6 +216,106 @@
       "sentence": {"original": "waso li tawa lon sewi.", "gloss": "bird PRED move at high", "translation": "The bird moves in the sky.", "note": "Sewi covers high, above, sky, and sacredness. Here the location selects the sky reading."},
       "source_note": "The etymology records the sound source. The present category is defined by Toki Pona speakers and the needs of each phrase.",
       "sources": [{"title": "Wiktionary: Toki Pona waso", "url": "https://en.wiktionary.org/wiki/waso#Toki_Pona"}]
+    },
+    {
+      "slug": "kili",
+      "headword": "kili",
+      "game": "kili",
+      "pronunciation": "KI-li · /ˈkili/ · content word",
+      "meanings": [
+        "fruit",
+        "vegetable",
+        "mushroom"
+      ],
+      "lede": "Kili groups fruit, vegetables and mushrooms together. A shopping basket can be more useful than a botanical boundary.",
+      "origin": {
+        "source_language": "Georgian",
+        "source_word": "ხილი (xili)",
+        "note": "Linku records Georgian ხილი (xili), meaning fruit, as the donor.",
+        "comparisons": [
+          "Georgian ხილი (xili)"
+        ]
+      },
+      "sentence": {
+        "original": "kili ni li jelo.",
+        "gloss": "fruit this PRED yellow",
+        "translation": "This fruit is yellow.",
+        "note": "Ni follows the noun it specifies. Jelo is the predicate after li; this context selects the fruit reading of kili."
+      },
+      "source_note": "Linku reproduces the pu definition and separately records the Georgian origin. The wider food category belongs to Toki Pona usage, not to an expanded translation of the donor.",
+      "sources": [
+        {
+          "title": "Linku: kili, pu definition and documented origin",
+          "url": "https://linku.la/words/kili"
+        }
+      ]
+    },
+    {
+      "slug": "luka",
+      "headword": "luka",
+      "game": "luka",
+      "pronunciation": "LU-ka · /ˈluka/ · content word; number",
+      "meanings": [
+        "hand",
+        "arm",
+        "five"
+      ],
+      "lede": "Luka can name the hand or count five. The sentence has to tell you which job it is doing.",
+      "origin": {
+        "source_language": "Serbo-Croatian",
+        "source_word": "рука / ruka",
+        "note": "Linku records Serbo-Croatian ruka, hand or arm, as the donor. The adapted Toki Pona form has l where the donor has r.",
+        "comparisons": [
+          "Serbo-Croatian рука (ruka)"
+        ]
+      },
+      "sentence": {
+        "original": "luka mi li lete.",
+        "gloss": "hand my PRED cold",
+        "translation": "My hands are cold.",
+        "note": "Mi follows luka as a possessor. Toki Pona leaves number unmarked here, so a singular hand or an arm could also fit another context."
+      },
+      "source_note": "The pu definition reported by Linku includes the bodily sense and the numeral five. The example chooses a bodily reading without turning five into part of the donor’s gloss.",
+      "sources": [
+        {
+          "title": "Linku: luka, bodily and numerical senses and origin",
+          "url": "https://linku.la/words/luka"
+        }
+      ]
+    },
+    {
+      "slug": "nasin",
+      "headword": "nasin",
+      "game": "nasin",
+      "pronunciation": "NA-sin · /ˈnasin/ · content word",
+      "meanings": [
+        "path",
+        "road",
+        "method",
+        "custom"
+      ],
+      "lede": "A nasin can be a route across town or a way of doing something. This week’s example stays on the road.",
+      "origin": {
+        "source_language": "Serbo-Croatian",
+        "source_word": "начин / način",
+        "note": "Linku identifies Serbo-Croatian način, way or method, as the source. Its č is adapted as s in nasin.",
+        "comparisons": [
+          "Serbo-Croatian начин (način)"
+        ]
+      },
+      "sentence": {
+        "original": "nasin ni li suli.",
+        "gloss": "road this PRED big",
+        "translation": "This road is wide.",
+        "note": "Literally, this way is big. Wide is a contextual English reading of suli with a road; nasin ni is an ordinary phrase, not a fixed compound."
+      },
+      "source_note": "The donor explains the sound source, while Linku’s pu definition covers both physical routes and methods. No literal-road restriction follows from the etymology.",
+      "sources": [
+        {
+          "title": "Linku: nasin, pu definition and Serbo-Croatian origin",
+          "url": "https://linku.la/words/nasin"
+        }
+      ]
     }
   ]
 }

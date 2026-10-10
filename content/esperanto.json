@@ -215,6 +215,119 @@
       "sentence": {"original": "La ĝardeno estas bela.", "gloss": "the garden be.PRS beautiful.ADJ", "translation": "The garden is beautiful.", "note": "The circumflex in ĝ represents /d͡ʒ/; the rest is pronounced as written."},
       "source_note": "Esperanto’s source selection is multilingual. This card shows a comparison set and avoids declaring one modern language the exclusive parent.",
       "sources": [{"title": "Wiktionary: Esperanto bela", "url": "https://en.wiktionary.org/wiki/bela#Esperanto"}]
+    },
+    {
+      "slug": "pano",
+      "headword": "pano",
+      "game": "pano",
+      "pronunciation": "PA-no · /ˈpano/ · noun",
+      "meanings": [
+        "bread"
+      ],
+      "lede": "Italian pane becomes pano, with an Esperanto noun ending ready to take another slice of grammar.",
+      "origin": {
+        "source_language": "Italian",
+        "source_word": "pane",
+        "note": "Wiktionary identifies Italian pane as the donor; Esperanto uses the root pan- with the noun ending -o.",
+        "comparisons": [
+          "Italian pane"
+        ]
+      },
+      "sentence": {
+        "original": "La pano estas varma.",
+        "gloss": "the bread be-PRS warm-ADJ",
+        "translation": "The bread is warm.",
+        "note": "Varma describes the singular noun pano. Estas links the subject to its description, so neither takes the object ending -n."
+      },
+      "source_note": "The Fundamento lists pan- with the English gloss bread. The Italian borrowing is a separate etymological claim supported by the linked word entry.",
+      "sources": [
+        {
+          "title": "Zamenhof: Universala Vortaro, hosted by the Akademio de Esperanto",
+          "url": "https://www.akademio-de-esperanto.org/fundamento/universala_vortaro.html"
+        },
+        {
+          "title": "Wiktionary: pano and references",
+          "url": "https://en.wiktionary.org/wiki/pano#Esperanto"
+        }
+      ]
+    },
+    {
+      "slug": "tablo",
+      "headword": "tablo",
+      "game": "tablo",
+      "pronunciation": "TA-blo · /ˈtablo/ · noun",
+      "meanings": [
+        "table"
+      ],
+      "lede": "Tablo is the piece of furniture: a useful place to put both the bread and a beginner sentence.",
+      "origin": {
+        "source_language": "French / English",
+        "source_word": "table",
+        "note": "The documented models are French table and English table. The card treats them as a comparison set rather than selecting one exclusive donor.",
+        "comparisons": [
+          "French table",
+          "English table"
+        ]
+      },
+      "sentence": {
+        "original": "La libro estas sur la tablo.",
+        "gloss": "the book be-PRS on the table",
+        "translation": "The book is on the table.",
+        "note": "Sur introduces a location here. Tablo stays without -n because the sentence describes where the book is, with no movement toward a destination."
+      },
+      "source_note": "Zamenhof’s multilingual entry establishes the furniture sense. The modern etymological entry names both French and English models for the root.",
+      "sources": [
+        {
+          "title": "Zamenhof: Universala Vortaro, hosted by the Akademio de Esperanto",
+          "url": "https://www.akademio-de-esperanto.org/fundamento/universala_vortaro.html"
+        },
+        {
+          "title": "Wiktionary: tablo and references",
+          "url": "https://en.wiktionary.org/wiki/tablo#Esperanto"
+        }
+      ]
+    },
+    {
+      "slug": "lerni",
+      "headword": "lerni",
+      "game": "lerni",
+      "pronunciation": "LER-ni · /ˈlerni/ · verb",
+      "meanings": [
+        "to learn",
+        "to study"
+      ],
+      "lede": "Lerni names the activity this page hopes to encourage. Replace -i with -as and the learning is under way.",
+      "origin": {
+        "source_language": "German / English / Yiddish",
+        "source_word": "lernen / learn / לערנען (lernen)",
+        "note": "The etymological entry names German lernen, English learn and Yiddish לערנען (lernen). These are documented Germanic models, not a reason to declare a single donor.",
+        "comparisons": [
+          "German lernen",
+          "English learn",
+          "Yiddish לערנען (lernen)"
+        ]
+      },
+      "sentence": {
+        "original": "Mi lernas novan vorton.",
+        "gloss": "I learn-PRS new-ADJ-ACC word-ACC",
+        "translation": "I am learning a new word.",
+        "note": "Both novan and vorton take -n: the adjective agrees with the noun that serves as the direct object."
+      },
+      "source_note": "The Fundamento gives lern- as learn. Reta Vortaro documents learning words and skills; the source-family comparison comes from the linked etymological entry.",
+      "sources": [
+        {
+          "title": "Zamenhof: Universala Vortaro, hosted by the Akademio de Esperanto",
+          "url": "https://www.akademio-de-esperanto.org/fundamento/universala_vortaro.html"
+        },
+        {
+          "title": "Reta Vortaro: lerni",
+          "url": "https://reta-vortaro.de/revo/art/lern.html"
+        },
+        {
+          "title": "Wiktionary: lerni and references",
+          "url": "https://en.wiktionary.org/wiki/lerni#Esperanto"
+        }
+      ]
     }
   ]
 }

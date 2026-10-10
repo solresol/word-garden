@@ -315,6 +315,118 @@
         {"title": "Solresol Dictionary, translated from Sudre", "url": "https://docs.google.com/spreadsheets/d/1-3lBxMURGN4AtGG846kuVGVNuEiHewCT88PiBahnODA/htmlview"},
         {"title": "Gajewski's Grammar: opposite words by reversal", "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"}
       ]
+    },
+    {
+      "slug": "doredo",
+      "headword": "doredo",
+      "game": "doredo",
+      "pronunciation": "do · re · do · three notes · 1–2–1",
+      "meanings": [
+        "time"
+      ],
+      "lede": "Doredo returns to its opening note. Its assigned meaning is time.",
+      "notes": [
+        "do",
+        "re",
+        "do"
+      ],
+      "origin": {
+        "source_language": "Assigned Solresol vocabulary",
+        "source_word": "do · re · do",
+        "note": "Gajewski lists doredo (drd) as time.",
+        "comparisons": [
+          "1 · 2 · 1",
+          "red · orange · red"
+        ]
+      },
+      "sentence": {
+        "original": "La doredo.",
+        "gloss": "the time",
+        "translation": "The time.",
+        "note": "A newly assembled teaching phrase: la plus doredo. It makes no claim to be a historical quotation."
+      },
+      "source_note": "The sequence comes from Gajewski’s time vocabulary group. Digits and colours encode those same notes; they add no new words.",
+      "sources": [
+        {
+          "title": "Gajewski: Grammar of Solresol, English translation",
+          "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"
+        }
+      ]
+    },
+    {
+      "slug": "dosoldo",
+      "headword": "dosoldo",
+      "game": "dosoldo",
+      "pronunciation": "do · sol · do · three notes · 1–5–1",
+      "meanings": [
+        "to be hungry"
+      ],
+      "lede": "The next do–sol–do is a vocabulary item, not a request to sing for supper.",
+      "notes": [
+        "do",
+        "sol",
+        "do"
+      ],
+      "origin": {
+        "source_language": "Assigned Solresol vocabulary",
+        "source_word": "do · sol · do",
+        "note": "Gajewski gives dosoldo (dsod) as be hungry.",
+        "comparisons": [
+          "1 · 5 · 1",
+          "red · blue · red"
+        ]
+      },
+      "sentence": {
+        "original": "Domi dosoldo.",
+        "gloss": "you be.hungry",
+        "translation": "You are hungry.",
+        "note": "A newly assembled teaching sentence using the listed pronoun and predicate. Pause between its two words."
+      },
+      "source_note": "In the abbreviated source form dsod, so means sol and d means do. The English are belongs to the translation.",
+      "sources": [
+        {
+          "title": "Gajewski: Grammar of Solresol, English translation",
+          "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"
+        }
+      ]
+    },
+    {
+      "slug": "refasi",
+      "headword": "refasi",
+      "game": "refasi",
+      "pronunciation": "re · fa · si · three notes · 2–4–7",
+      "meanings": [
+        "to answer",
+        "to reply"
+      ],
+      "lede": "Three rising notes give the learner something to say after a question.",
+      "notes": [
+        "re",
+        "fa",
+        "si"
+      ],
+      "origin": {
+        "source_language": "Assigned Solresol vocabulary",
+        "source_word": "re · fa · si",
+        "note": "Gajewski lists refasi (rfs) for answering or replying.",
+        "comparisons": [
+          "2 · 4 · 7",
+          "orange · green · violet"
+        ]
+      },
+      "sentence": {
+        "original": "Dore refasi.",
+        "gloss": "I answer",
+        "translation": "I answer.",
+        "note": "A newly assembled teaching sentence. The verb uses the unmarked form shown in the grammar."
+      },
+      "source_note": "The headword appears in Gajewski’s discussion of grouping synonyms. Its definition is assigned vocabulary, not an etymology from note names.",
+      "sources": [
+        {
+          "title": "Gajewski: Grammar of Solresol, English translation",
+          "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"
+        }
+      ]
     }
   ]
 }

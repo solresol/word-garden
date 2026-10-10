@@ -313,6 +313,202 @@
       "sources": [
         {"title": "Wiktionary: reconstructed PIE *h₃rḗǵs and references", "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Indo-European/h%E2%82%83r%E1%B8%97%C7%B5s"}
       ]
+    },
+    {
+      "slug": "h1ekwos",
+      "headword": "*h₁éḱwos",
+      "game": "ekwos",
+      "pronunciation": "approximately ‘h₁-éḱ-wos’ · reconstructed masculine noun",
+      "meanings": [
+        "horse",
+        "stallion"
+      ],
+      "lede": "Latin equus and Old English eoh name the same animal through different branches of the family.",
+      "lineages": [
+        {
+          "branch": "Italic",
+          "route": [
+            "Proto-Italic *ekwos",
+            "Latin equus"
+          ],
+          "gloss": "horse"
+        },
+        {
+          "branch": "Germanic",
+          "route": [
+            "Proto-Germanic *ehwaz",
+            "Proto-West Germanic *ehw",
+            "Old English eoh"
+          ],
+          "gloss": "horse"
+        }
+      ],
+      "kerfuffle": {
+        "left": "equus",
+        "right": "eoh",
+        "note": "Latin keeps a stop where the Germanic branch developed a fricative. The resemblance becomes clearer when the intermediate forms are shown."
+      },
+      "sentence": {
+        "original": "*h₁éḱwos *bʰéreti.",
+        "gloss": "horse-NOM.SG carry-PRS-3SG",
+        "translation": "The horse carries.",
+        "note": "A pedagogical reconstruction using the thematic noun and a present form of *bʰer-. The asterisks mark reconstructed words; the clause is newly assembled."
+      },
+      "source_note": "This selective diagram uses the conventional o-stem reconstruction. The initial laryngeal and the relation to Anatolian u-stems remain debated; the proposed derivation from a word for speed is not assumed here.",
+      "sources": [
+        {
+          "title": "Wiktionary: Proto-Indo-European *h₁éḱwos and references",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Indo-European/h%E2%82%81%C3%A9%E1%B8%B1wos"
+        },
+        {
+          "title": "Wiktionary: equus and references",
+          "url": "https://en.wiktionary.org/wiki/equus#Latin"
+        },
+        {
+          "title": "Wiktionary: Proto-Germanic *ehwaz and references",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Germanic/ehwaz"
+        },
+        {
+          "title": "Wiktionary: Proto-Indo-European *bʰer- and references",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Indo-European/b%CA%B0er-"
+        }
+      ]
+    },
+    {
+      "slug": "doru",
+      "headword": "*dóru",
+      "game": "doru",
+      "pronunciation": "approximately ‘dó-ru’ · reconstructed neuter noun",
+      "meanings": [
+        "tree",
+        "wood"
+      ],
+      "lede": "A tree can supply both a family diagram and a spear shaft: English tree and Greek dóru preserve different uses of the same material.",
+      "lineages": [
+        {
+          "branch": "Germanic, through a derived stem",
+          "route": [
+            "Pre-Germanic *dréwom",
+            "Proto-Germanic *trewą",
+            "Proto-West Germanic *treu",
+            "Old English trēow",
+            "Middle English tre",
+            "English tree"
+          ],
+          "gloss": "tree"
+        },
+        {
+          "branch": "Greek",
+          "route": [
+            "Proto-Hellenic *dóru",
+            "Ancient Greek δόρυ (dóru)"
+          ],
+          "gloss": "wood; spear shaft; spear"
+        }
+      ],
+      "kerfuffle": {
+        "left": "tree",
+        "right": "dóru",
+        "note": "One word readily suggests a living plant; the Greek cousin can name a weapon made from its wood."
+      },
+      "sentence": {
+        "original": "*dóru *h₁ésti.",
+        "gloss": "tree-NOM.SG.N be-PRS-3SG",
+        "translation": "There is a tree.",
+        "note": "A pedagogical reconstruction with a neuter nominative and an existential reading of *h₁ésti. It illustrates a possible clause, not a recovered utterance."
+      },
+      "source_note": "The diagram selects two branches. English continues a formation built on the oblique stem *dréw-, rather than a simple sound-by-sound continuation of the displayed nominative *dóru.",
+      "sources": [
+        {
+          "title": "Wiktionary: Proto-Indo-European *dóru and references",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Indo-European/d%C3%B3ru"
+        },
+        {
+          "title": "Wiktionary: Proto-Germanic *trewą and references",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Germanic/trew%C4%85"
+        },
+        {
+          "title": "Wiktionary: tree and references",
+          "url": "https://en.wiktionary.org/wiki/tree#English"
+        },
+        {
+          "title": "Wiktionary: Proto-Hellenic *dóru and references",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Hellenic/d%C3%B3ru"
+        },
+        {
+          "title": "Wiktionary: δόρυ and references",
+          "url": "https://en.wiktionary.org/wiki/%CE%B4%CF%8C%CF%81%CF%85#Ancient_Greek"
+        },
+        {
+          "title": "Wiktionary: Proto-Indo-European *h₁es- and references",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Indo-European/h%E2%82%81es-"
+        }
+      ]
+    },
+    {
+      "slug": "h1nomn",
+      "headword": "*h₁nómn̥",
+      "game": "nomn",
+      "pronunciation": "approximately ‘h₁-nóm-n̥’ · reconstructed neuter noun; final n is syllabic",
+      "meanings": [
+        "name"
+      ],
+      "lede": "English name and Latin nōmen belong together, even though scholars disagree about several details of their reconstructed ancestor.",
+      "lineages": [
+        {
+          "branch": "Germanic",
+          "route": [
+            "Proto-Germanic *namô",
+            "Proto-West Germanic *namō",
+            "Old English nama",
+            "Middle English name",
+            "English name"
+          ],
+          "gloss": "name"
+        },
+        {
+          "branch": "Italic",
+          "route": [
+            "Proto-Italic *nōmn̥",
+            "Latin nōmen"
+          ],
+          "gloss": "name"
+        }
+      ],
+      "kerfuffle": {
+        "left": "name",
+        "right": "nōmen",
+        "note": "English inherited its word through Germanic. Latin supplies a cousin, not the source of the everyday English noun."
+      },
+      "sentence": {
+        "original": "*h₁nómn̥ *h₁ésti.",
+        "gloss": "name-NOM.SG.N be-PRS-3SG",
+        "translation": "There is a name.",
+        "note": "A pedagogical reconstruction that uses one conventional nominative. Neither this sentence nor its precise pronunciation is directly attested."
+      },
+      "source_note": "This selective family tree groups related formations, not an agreed sequence of identical inflections. Reconstructions differ over laryngeals, vowel length and the paradigm; the Germanic noun is often connected with a collective formation.",
+      "sources": [
+        {
+          "title": "Wiktionary: Proto-Indo-European *h₁nómn̥ and references",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Indo-European/h%E2%82%81n%C3%B3mn%CC%A5"
+        },
+        {
+          "title": "Wiktionary: Proto-Germanic *namô and references",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Germanic/nam%C3%B4"
+        },
+        {
+          "title": "Wiktionary: name and references",
+          "url": "https://en.wiktionary.org/wiki/name#English"
+        },
+        {
+          "title": "Wiktionary: nomen and references",
+          "url": "https://en.wiktionary.org/wiki/nomen#Latin"
+        },
+        {
+          "title": "Wiktionary: Proto-Indo-European *h₁es- and references",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Indo-European/h%E2%82%81es-"
+        }
+      ]
     }
   ]
 }
