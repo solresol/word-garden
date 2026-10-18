@@ -39,6 +39,10 @@
     {
       "slug": "ph2ter",
       "published": "2026-10-12"
+    },
+    {
+      "slug": "newos",
+      "published": "2026-10-19"
     }
   ],
   "esperanto": [
@@ -81,6 +85,10 @@
     {
       "slug": "luno",
       "published": "2026-10-12"
+    },
+    {
+      "slug": "bona",
+      "published": "2026-10-19"
     }
   ],
   "toki": [
@@ -123,6 +131,10 @@
     {
       "slug": "akesi",
       "published": "2026-10-12"
+    },
+    {
+      "slug": "soweli",
+      "published": "2026-10-19"
     }
   ],
   "solresol": [
@@ -165,6 +177,10 @@
     {
       "slug": "domi",
       "published": "2026-10-12"
+    },
+    {
+      "slug": "dofa",
+      "published": "2026-10-19"
     }
   ]
 }
