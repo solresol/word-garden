@@ -43,6 +43,10 @@
     {
       "slug": "newos",
       "published": "2026-10-19"
+    },
+    {
+      "slug": "h3regs",
+      "published": "2026-10-26"
     }
   ],
   "esperanto": [
@@ -89,6 +93,10 @@
     {
       "slug": "bona",
       "published": "2026-10-19"
+    },
+    {
+      "slug": "bela",
+      "published": "2026-10-26"
     }
   ],
   "toki": [
@@ -135,6 +143,10 @@
     {
       "slug": "soweli",
       "published": "2026-10-19"
+    },
+    {
+      "slug": "waso",
+      "published": "2026-10-26"
     }
   ],
   "solresol": [
@@ -181,6 +193,10 @@
     {
       "slug": "dofa",
       "published": "2026-10-19"
+    },
+    {
+      "slug": "mido",
+      "published": "2026-10-26"
     }
   ]
 }
