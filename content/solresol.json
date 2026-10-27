@@ -427,6 +427,118 @@
           "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"
         }
       ]
+    },
+    {
+      "slug": "fala",
+      "headword": "fala",
+      "game": "fala",
+      "pronunciation": "fa · la · two notes · 4–6",
+      "meanings": [
+        "good",
+        "tasty"
+      ],
+      "lede": "Two notes can approve the food. Gajewski uses fala when explaining how to make good into very good.",
+      "notes": [
+        "fa",
+        "la"
+      ],
+      "origin": {
+        "source_language": "Assigned Solresol vocabulary",
+        "source_word": "fa · la",
+        "note": "Gajewski lists fala, abbreviated fl, with good and tasty senses. Its note sequence is assigned vocabulary, not a borrowing.",
+        "comparisons": [
+          "4 · 6",
+          "green · indigo"
+        ]
+      },
+      "sentence": {
+        "original": "Fasi fala.",
+        "gloss": "very good",
+        "translation": "Very good.",
+        "note": "Gajewski gives this phrase as fs fl in the Fasi Sifa section. Here the abbreviated note names are expanded to full syllables; this is a historical example, not a newly attributed quotation."
+      },
+      "source_note": "The grammar places fasi before an adjective to intensify it. The digits and colours encode the same fa–la sequence; the site’s C-major pitches are a playback choice.",
+      "sources": [
+        {
+          "title": "Gajewski: Grammar of Solresol, two-syllable vocabulary and Fasi Sifa",
+          "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"
+        }
+      ]
+    },
+    {
+      "slug": "dosido",
+      "headword": "dosido",
+      "game": "dosido",
+      "pronunciation": "do · si · do · three notes · 1–7–1",
+      "meanings": [
+        "to help",
+        "to assist"
+      ],
+      "lede": "Do–si–do offers help. The grammar gathers several English near-synonyms under this one assigned sequence.",
+      "notes": [
+        "do",
+        "si",
+        "do"
+      ],
+      "origin": {
+        "source_language": "Assigned Solresol vocabulary",
+        "source_word": "do · si · do",
+        "note": "Gajewski explicitly gives dosido, abbreviated dsd, for helping or assisting in his discussion of synonyms.",
+        "comparisons": [
+          "1 · 7 · 1",
+          "red · violet · red"
+        ]
+      },
+      "sentence": {
+        "original": "Dore dosido domi.",
+        "gloss": "I help you",
+        "translation": "I help you.",
+        "note": "A newly assembled teaching sentence using the documented pronouns dore and domi. The present verb is unmarked, and the three words should be separated by pauses."
+      },
+      "source_note": "The source prints both the full word dosido and the shortened dsd, fixing the middle note as si. The teaching sentence is editorial; the historical assignment of the headword is Gajewski’s.",
+      "sources": [
+        {
+          "title": "Gajewski: Grammar of Solresol, Suppression of Synonyms and pronouns",
+          "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"
+        }
+      ]
+    },
+    {
+      "slug": "solsi",
+      "headword": "solsi",
+      "game": "solsi",
+      "pronunciation": "sol · si · two notes · 5–7",
+      "meanings": [
+        "thanks",
+        "to thank"
+      ],
+      "lede": "A small thank-you needs only two notes. Reading the abbreviation correctly is the larger task.",
+      "notes": [
+        "sol",
+        "si"
+      ],
+      "origin": {
+        "source_language": "Assigned Solresol vocabulary",
+        "source_word": "sol · si",
+        "note": "Gajewski’s two-syllable list gives sos for thanking or thanks. His abbreviation so means sol, while s means si.",
+        "comparisons": [
+          "5 · 7",
+          "blue · violet"
+        ]
+      },
+      "sentence": {
+        "original": "Solsi!",
+        "gloss": "thanks",
+        "translation": "Thanks!",
+        "note": "A teaching utterance newly punctuated from the documented vocabulary item. It is not presented as a sentence quoted from the grammar."
+      },
+      "source_note": "Parse the source’s sos as so + s: sol followed by si. The colour and digit versions are alternate spellings of those notes, not related words with separate etymologies.",
+      "sources": [
+        {
+          "title": "Gajewski: Grammar of Solresol, two-syllable words and shortened initials",
+          "url": "https://www.ifost.org.au/~gregb/solresol/sorsoeng.htm"
+        }
+      ]
     }
   ]
 }

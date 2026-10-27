@@ -509,6 +509,222 @@
           "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Indo-European/h%E2%82%81es-"
         }
       ]
+    },
+    {
+      "slug": "pods",
+      "headword": "*pṓds",
+      "game": "pods",
+      "pronunciation": "reconstructed *pṓds · long accented vowel · masculine root noun",
+      "meanings": [
+        "foot"
+      ],
+      "lede": "English foot and Latin pēs put different consonants forward, but comparative evidence places them in the same family.",
+      "lineages": [
+        {
+          "branch": "Germanic",
+          "route": [
+            "Proto-Germanic *fōts",
+            "Proto-West Germanic *fōt",
+            "Old English fōt",
+            "Middle English fot",
+            "English foot"
+          ],
+          "gloss": "foot"
+        },
+        {
+          "branch": "Italic",
+          "route": [
+            "Proto-Italic *pets",
+            "Latin pēs"
+          ],
+          "gloss": "foot"
+        }
+      ],
+      "kerfuffle": {
+        "left": "foot",
+        "right": "pēs",
+        "note": "English inherited foot through Germanic; Latin pēs is its cousin, not its donor."
+      },
+      "sentence": {
+        "original": "*pṓds *h₁ésti.",
+        "gloss": "foot-NOM.SG be-PRS-3SG",
+        "translation": "There is a foot.",
+        "note": "A pedagogical reconstruction pairing the nominative with an existential verb. The English article and there make the tiny clause idiomatic; they are not extra reconstructed words."
+      },
+      "source_note": "This selective diagram groups members of an alternating paradigm: the displayed nominative has a long vowel, while the oblique stem is *ped-. The Italic reconstruction *pets also has a published alternative, *pōts; the diagram follows the linked entry’s convention.",
+      "sources": [
+        {
+          "title": "American Heritage: Indo-European root ped-",
+          "url": "https://www.ahdictionary.com/word/indoeurop.html#ped-"
+        },
+        {
+          "title": "Wiktionary: *pṓds, paradigm and references",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Indo-European%2Fp%E1%B9%93ds"
+        },
+        {
+          "title": "Wiktionary: Proto-Germanic *fōts and descendants",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Germanic%2Ff%C5%8Dts"
+        },
+        {
+          "title": "Wiktionary: foot, inherited English route",
+          "url": "https://en.wiktionary.org/wiki/foot#English"
+        },
+        {
+          "title": "Wiktionary: Proto-Italic *pets and alternative reconstruction",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Italic%2Fpets"
+        },
+        {
+          "title": "Wiktionary: Latin pēs",
+          "url": "https://en.wiktionary.org/wiki/pes#Latin"
+        },
+        {
+          "title": "Wiktionary: reconstructed *h₁es- and cited grammars",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Indo-European%2Fh%E2%82%81es-"
+        }
+      ]
+    },
+    {
+      "slug": "ker",
+      "headword": "*ḱḗr",
+      "game": "ker",
+      "pronunciation": "reconstructed *ḱḗr · palatal stop and long accented vowel · neuter noun",
+      "meanings": [
+        "heart"
+      ],
+      "lede": "A missing d in the headword is not a missing relative: the wider paradigm helps connect English heart with Latin cor, cordis.",
+      "lineages": [
+        {
+          "branch": "Germanic, with a remodeled noun stem",
+          "route": [
+            "Proto-Germanic *hertô",
+            "Proto-West Germanic *hertā",
+            "Old English heorte",
+            "Middle English herte",
+            "English heart"
+          ],
+          "gloss": "heart"
+        },
+        {
+          "branch": "Italic, from the oblique stem",
+          "route": [
+            "PIE oblique stem *ḱr̥d-",
+            "Proto-Italic *kord",
+            "Latin cor"
+          ],
+          "gloss": "heart"
+        }
+      ],
+      "kerfuffle": {
+        "left": "heart",
+        "right": "cor",
+        "note": "The Latin genitive cordis makes the d visible. Compare the whole paradigm before judging the short nominative cor."
+      },
+      "sentence": {
+        "original": "*ḱḗr *h₁ésti.",
+        "gloss": "heart-NOM.SG.N be-PRS-3SG",
+        "translation": "There is a heart.",
+        "note": "A pedagogical reconstruction, newly assembled to show a neuter subject. The accent and laryngeal notation represent scholarly analysis, not a surviving written sentence."
+      },
+      "source_note": "Only the Germanic and Italic branches are selected. The reconstructed nominative *ḱḗr contrasts with the oblique stem *ḱr̥d-; Germanic also remodeled the noun as an n-stem. The connecting lines therefore summarize related formations, not unchanged inflections.",
+      "sources": [
+        {
+          "title": "American Heritage: Indo-European root kerd-",
+          "url": "https://www.ahdictionary.com/word/indoeurop.html#kerd-"
+        },
+        {
+          "title": "Wiktionary: *ḱḗr, reconstruction notes and bibliography",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Indo-European%2F%E1%B8%B1%E1%B8%97r"
+        },
+        {
+          "title": "Wiktionary: Proto-Germanic *hertô and descendants",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Germanic%2Fhert%C3%B4"
+        },
+        {
+          "title": "Wiktionary: heart, English inheritance",
+          "url": "https://en.wiktionary.org/wiki/heart#English"
+        },
+        {
+          "title": "Wiktionary: Proto-Italic *kord",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Italic%2Fkord"
+        },
+        {
+          "title": "Wiktionary: Latin cor, cordis",
+          "url": "https://en.wiktionary.org/wiki/cor#Latin"
+        },
+        {
+          "title": "Wiktionary: reconstructed *h₁es- and cited grammars",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Indo-European%2Fh%E2%82%81es-"
+        }
+      ]
+    },
+    {
+      "slug": "kwo",
+      "headword": "*ḱwṓ",
+      "game": "kwo",
+      "pronunciation": "reconstructed *ḱwṓ · palatal stop, w and long accented vowel · masculine noun",
+      "meanings": [
+        "dog"
+      ],
+      "lede": "Before hound narrowed toward hunting dogs, its English ancestors could name a dog in general. Greek kýōn belongs to the same older family.",
+      "lineages": [
+        {
+          "branch": "Germanic, through a suffixed formation",
+          "route": [
+            "Pre-Germanic *ḱun-tós",
+            "Proto-Germanic *hundaz",
+            "Proto-West Germanic *hund",
+            "Old English hund",
+            "Middle English hound",
+            "English hound"
+          ],
+          "gloss": "dog; now especially a hunting dog"
+        },
+        {
+          "branch": "Greek",
+          "route": [
+            "Ancient Greek κύων (kýōn)"
+          ],
+          "gloss": "dog"
+        }
+      ],
+      "kerfuffle": {
+        "left": "hound",
+        "right": "kýōn",
+        "note": "Greek keeps a k sound where the Germanic branch has h. The Germanic word also contains an added suffix, so the comparison is more than a letter swap."
+      },
+      "sentence": {
+        "original": "*ḱwṓ *bʰéreti.",
+        "gloss": "dog-NOM.SG carry-PRS-3SG",
+        "translation": "The dog carries.",
+        "note": "A newly assembled pedagogical reconstruction using a thematic present of *bʰer-. What the dog carries is left unstated; the clause illustrates the subject and verb rather than reconstructing a particular ancient scene."
+      },
+      "source_note": "The diagram selects the hound and Greek routes. Germanic continues a suffixed formation, cited as *ḱun-tós or *ḱwn̥tós. The displayed nominative *ḱwṓ is one scholarly convention; alternatives retain a final *n. Greek restored its final n by analogy within the paradigm.",
+      "sources": [
+        {
+          "title": "American Heritage: Indo-European root kwon-",
+          "url": "https://www.ahdictionary.com/word/indoeurop.html#kwon-"
+        },
+        {
+          "title": "Wiktionary: *ḱwṓ and alternative reconstructions",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Indo-European%2F%E1%B8%B1w%E1%B9%93"
+        },
+        {
+          "title": "Wiktionary: Proto-Germanic *hundaz, suffixed formation",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Germanic%2Fhundaz"
+        },
+        {
+          "title": "Wiktionary: hound, history and semantic narrowing",
+          "url": "https://en.wiktionary.org/wiki/hound#English"
+        },
+        {
+          "title": "Wiktionary: Ancient Greek κύων",
+          "url": "https://en.wiktionary.org/wiki/%CE%BA%CF%8D%CF%89%CE%BD#Ancient_Greek"
+        },
+        {
+          "title": "Wiktionary: *bʰer- and thematic present",
+          "url": "https://en.wiktionary.org/wiki/Reconstruction:Proto-Indo-European%2Fb%CA%B0er-"
+        }
+      ]
     }
   ]
 }

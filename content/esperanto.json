@@ -328,6 +328,125 @@
           "url": "https://en.wiktionary.org/wiki/lerni#Esperanto"
         }
       ]
+    },
+    {
+      "slug": "ghardeno",
+      "headword": "ĝardeno",
+      "game": "gardeno",
+      "pronunciation": "ĝar-DE-no · /d͡ʒarˈdeno/ · noun",
+      "meanings": [
+        "garden"
+      ],
+      "lede": "At last, a word for the garden itself. The initial ĝ has the sound of English j, and the stress falls on de.",
+      "origin": {
+        "source_language": "French / Italian / English",
+        "source_word": "jardin / giardino / garden",
+        "note": "The documented models are French jardin, Italian giardino and English garden. These form a comparison set; no single exclusive donor is claimed.",
+        "comparisons": [
+          "French jardin",
+          "Italian giardino",
+          "English garden"
+        ]
+      },
+      "sentence": {
+        "original": "Ni laboras en la ĝardeno.",
+        "gloss": "we work-PRS in the garden",
+        "translation": "We work in the garden.",
+        "note": "En gives the location of the work. Ĝardeno has no accusative -n here because the phrase describes a place, not motion into it."
+      },
+      "source_note": "The Fundamento records ĝarden- with the garden sense. Reta Vortaro supplies usage examples; the linked etymological entry identifies the three source-language models without making Esperanto an inherited daughter of any one of them.",
+      "sources": [
+        {
+          "title": "Zamenhof: Universala Vortaro, ĝarden-",
+          "url": "https://www.akademio-de-esperanto.org/fundamento/universala_vortaro.html#av-1517"
+        },
+        {
+          "title": "Reta Vortaro: ĝardeno",
+          "url": "https://reta-vortaro.de/revo/art/gxarde.html"
+        },
+        {
+          "title": "Wiktionary: ĝardeno, models and historical reference",
+          "url": "https://en.wiktionary.org/wiki/%C4%9Dardeno#Esperanto"
+        }
+      ]
+    },
+    {
+      "slug": "shlosi",
+      "headword": "ŝlosi",
+      "game": "slosi",
+      "pronunciation": "ŜLO-si · /ˈʃlosi/ · verb",
+      "meanings": [
+        "to lock"
+      ],
+      "lede": "Closing a door and locking it are different jobs. Ŝlosi is the one that calls for a lock.",
+      "origin": {
+        "source_language": "German",
+        "source_word": "schließen",
+        "note": "The etymological entry, citing André Cherpillod, identifies German schließen as the donor. Esperanto ŝlosi specifically denotes locking in its ordinary physical sense.",
+        "comparisons": [
+          "German schließen"
+        ]
+      },
+      "sentence": {
+        "original": "Mi ŝlosas la pordon.",
+        "gloss": "I lock-PRS the door-ACC",
+        "translation": "I lock the door.",
+        "note": "The infinitive ending -i becomes present-tense -as. Pordon takes -n because the door is the direct object; the article la stays unchanged."
+      },
+      "source_note": "Zamenhof’s multilingual gloss and Reta Vortaro both distinguish locking from simply closing. The donor identification comes from the cited etymological dictionary reference, not from the German translation column alone.",
+      "sources": [
+        {
+          "title": "Zamenhof: Universala Vortaro, ŝlos-",
+          "url": "https://www.akademio-de-esperanto.org/fundamento/universala_vortaro.html#av-4243"
+        },
+        {
+          "title": "Reta Vortaro: ŝlosi, closing with a lock",
+          "url": "https://reta-vortaro.de/revo/art/sxlos.html"
+        },
+        {
+          "title": "Wiktionary: ŝlosi, citing Cherpillod’s etymological dictionary",
+          "url": "https://en.wiktionary.org/wiki/%C5%9Dlosi#Esperanto"
+        }
+      ]
+    },
+    {
+      "slug": "skribi",
+      "headword": "skribi",
+      "game": "skribi",
+      "pronunciation": "SKRI-bi · /ˈskribi/ · verb",
+      "meanings": [
+        "to write"
+      ],
+      "lede": "A Latin verb enters Esperanto and gains a regular infinitive ending. A short letter is enough to put skribi to work.",
+      "origin": {
+        "source_language": "Latin",
+        "source_word": "scrībere",
+        "note": "Skribi is documented as a learned borrowing from Latin scrībere. The Esperanto verb then follows Esperanto conjugation, rather than preserving the Latin paradigm.",
+        "comparisons": [
+          "Latin scrībere"
+        ]
+      },
+      "sentence": {
+        "original": "Ŝi skribas mallongan leteron.",
+        "gloss": "she write-PRS short-ADJ-ACC letter-ACC",
+        "translation": "She writes a short letter.",
+        "note": "Mal- reverses longa, long. Mallongan and leteron both carry the direct-object ending -n, since the adjective agrees with its noun."
+      },
+      "source_note": "The Fundamento establishes the writing sense. Wiktionary cites both Vilborg and Cherpillod for the Latin source; Reta Vortaro documents writing texts and letters.",
+      "sources": [
+        {
+          "title": "Zamenhof: Universala Vortaro, skrib-",
+          "url": "https://www.akademio-de-esperanto.org/fundamento/universala_vortaro.html#av-4008"
+        },
+        {
+          "title": "Reta Vortaro: skribi",
+          "url": "https://reta-vortaro.de/revo/art/skrib.html"
+        },
+        {
+          "title": "Wiktionary: skribi, citing Vilborg and Cherpillod",
+          "url": "https://en.wiktionary.org/wiki/skribi#Esperanto"
+        }
+      ]
     }
   ]
 }

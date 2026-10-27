@@ -316,6 +316,104 @@
           "url": "https://linku.la/words/nasin"
         }
       ]
+    },
+    {
+      "slug": "lape",
+      "headword": "lape",
+      "game": "lape",
+      "pronunciation": "LA-pe · /ˈlape/ · content word",
+      "meanings": [
+        "sleep",
+        "rest"
+      ],
+      "lede": "Lape makes room for a pause. In this sentence, resting is enough; falling asleep is optional.",
+      "origin": {
+        "source_language": "Dutch",
+        "source_word": "slapen",
+        "note": "Linku records Dutch slapen, to sleep, as the donor. Toki Pona lape also covers resting, so its present range is broader than this one donor gloss.",
+        "comparisons": [
+          "Dutch slapen"
+        ]
+      },
+      "sentence": {
+        "original": "mi lape.",
+        "gloss": "I rest",
+        "translation": "I am resting.",
+        "note": "With mi alone as the subject, there is no li before the predicate. The same clause can describe sleeping when the situation calls for that reading."
+      },
+      "source_note": "Linku reports the sleeping and resting senses from pu and identifies the Dutch source separately. The example does not add tense: present time is an English choice supplied by context.",
+      "sources": [
+        {
+          "title": "Linku: lape, pu definition and Dutch origin",
+          "url": "https://linku.la/words/lape"
+        }
+      ]
+    },
+    {
+      "slug": "kiwen",
+      "headword": "kiwen",
+      "game": "kiwen",
+      "pronunciation": "KI-wen · /ˈkiwen/ · content word",
+      "meanings": [
+        "hard object",
+        "stone",
+        "metal"
+      ],
+      "lede": "Kiwen can be a stone in the path or a piece of metal. Hardness gives the word its useful breadth.",
+      "origin": {
+        "source_language": "Finnish",
+        "source_word": "kiven",
+        "note": "The documented donor is Finnish kiven, the genitive form of the word for stone. That borrowed sound shape does not make kiwen a genitive form in Toki Pona.",
+        "comparisons": [
+          "Finnish kiven, genitive of kivi"
+        ]
+      },
+      "sentence": {
+        "original": "kiwen ni li suli.",
+        "gloss": "stone this PRED big",
+        "translation": "This stone is large.",
+        "note": "Ni follows the object it identifies, and li introduces the predicate suli. Stone is the contextual reading of kiwen; another setting could make it a different hard object."
+      },
+      "source_note": "Linku explicitly names the Finnish genitive donor and reproduces the pu range covering hard objects, stone and metal. Kiwen ni is an ordinary descriptive phrase, not a separate dictionary compound.",
+      "sources": [
+        {
+          "title": "Linku: kiwen, material senses and Finnish genitive donor",
+          "url": "https://linku.la/words/kiwen"
+        }
+      ]
+    },
+    {
+      "slug": "open",
+      "headword": "open",
+      "game": "open",
+      "pronunciation": "O-pen · /ˈopen/ · content word",
+      "meanings": [
+        "to begin",
+        "to open",
+        "to turn on"
+      ],
+      "lede": "The spelling looks familiar to an English reader, and this time the borrowing record agrees. The vowels still follow Toki Pona pronunciation.",
+      "origin": {
+        "source_language": "English",
+        "source_word": "open",
+        "note": "Linku identifies English open as the donor. The Toki Pona word also covers beginning an activity or turning something on.",
+        "comparisons": [
+          "English open"
+        ]
+      },
+      "sentence": {
+        "original": "mi open e poki.",
+        "gloss": "I open OBJ container",
+        "translation": "I open the container.",
+        "note": "The particle e introduces poki as the direct object. Mi takes no li here; this example uses open as the main predicate."
+      },
+      "source_note": "The donor is documented, not inferred from identical spelling. Linku’s pu definition supports the opening sense used here; no fixed compound or special preverb construction is needed.",
+      "sources": [
+        {
+          "title": "Linku: open, pu meanings and English donor",
+          "url": "https://linku.la/words/open"
+        }
+      ]
     }
   ]
 }
